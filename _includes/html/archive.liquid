@@ -1,0 +1,16 @@
+{% unless site.archive == null %}
+<!-- Archive start -->
+<div id="related">
+  <h2>{{ site.archive }}</h2>
+  <ul class="posts">
+    {% for post in site.posts limit:30 %}
+    <li>
+      <span>{{ post.date | date: '%Y-%m-%d' }}</span>
+      &nbsp;&raquo;&nbsp;&nbsp;
+      <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<!-- Archive end -->
+{% endunless -%}

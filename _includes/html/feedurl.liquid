@@ -1,0 +1,10 @@
+{% include html/getpageinfo %}
+{% unless feed == null %}
+<!-- Feedurl start -->
+<div class="rss">
+  <a href="{{ feed }}">
+    <img src="{{ site.assets }}/sembol/feed-64.png" alt="Özet Akışı" />
+  </a>
+</div>
+<!-- Feedurl end -->
+{% endunless -%}

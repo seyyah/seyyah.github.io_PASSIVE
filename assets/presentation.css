@@ -1,0 +1,99 @@
+/* begin presentation.css */
+
+ul li {
+  list-style: none;
+  list-style-type: none;
+  margin-left: -1.5em;
+  padding-left: 1em;
+  text-indent: -1.3em;
+}
+ul li pre { text-indent: 0; }
+ul li:before {
+  content: '\25B6 \0020';
+  color: #9c000d;
+  line-height:80%;
+  vertical-align: 16%;
+  padding-right: 0.4em;
+}
+ul li:first {
+  content: ' ';
+}
+
+li p { display: inline; }
+li pre { margin-left: 2em; }
+
+/*
+ * Limit pre area's height and allow using a vertical scrollbar for overflowed
+ * content (I think this might be considered as the most appealing reason for
+ * using html slides involving codes).
+ */
+.gist .gist-file .gist-data pre, pre {
+  max-height: 485px;
+  padding-top: 0.25em !important;
+  padding-right: 0.5em !important;
+  padding-left: 1em !important;
+  overflow: auto;
+  font-family: 'Monaco', 'Bitstream Vera Sans Mono', 'Lucida Console', 'FreeMono', Monospace;
+}
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left bottom, left top, from(#9c000d), to(#eeeeee));
+  -webkit-border-radius: 1ex;
+}
+::-webkit-scrollbar-corner {
+  background: #dedede;
+}
+
+.slide.achtung {
+  background: #ffffe0;
+  border: 1px solid #eee;
+  border-radius: 20px;
+}
+.slide.achtung header {
+  color: #9c000d;
+}
+.slide.dikkat {
+  background: #ffffe0;
+}
+.slide.dikkat header {
+  color: #9c000d;
+}
+
+.slide.first {
+  text-align: center;
+}
+.slide.first header {
+  color: #9c000d;
+  width: 900px;
+  padding-top: 30px;
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  left: 0px;
+  color: white;
+  background-color: #9c000d;
+  -moz-border-radius: 0.15em 0.15em 0.15em 0.15em;
+  border-radius: 0.15em 0.15em 0.15em 0.15em;
+  height: 80px;
+  font-family: 'Ubuntu Titling', 'Lucida Grande';
+}
+.slide.first section {
+  padding-top: 90px;
+}
+
+a {
+  text-decoration: none;
+  color: #1571e1;
+  border: none;
+  display: inline !important;
+}
+
+.section {
+  color: black;
+}
+
+/* end presentation.css */

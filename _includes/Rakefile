@@ -1,0 +1,44 @@
+# Önişleme inşa dosyası.
+# 	öntanımlı → tüm dizinleri işle
+# 	clean     → üretilen tüm dosyaları sil
+# 	html      → sadece html dizinini işle
+# 	css       → sadece css dizinini işle
+
+require 'rake/clean'
+
+# f.ext → process → f kurallarını oluştur
+def prep_rules_for_noext(sources, &process)
+  sources.each do |f|
+    rule f.pathmap("%X") => f do |t|
+      process.call(t)
+    end
+  end
+end
+
+# Liquid
+html_sources = FileList["html/*.liquid"]
+html_targets = html_sources.map { |f| f.pathmap("%X") }
+prep_rules_for_noext(html_sources) do |t|
+  $stderr.puts "minifying #{t.source} to #{t.name}"
+  File.open(t.source) do |f|
+    s = f.read
+    s.gsub!(/%\}\s+\{%/, '%}{%')
+    s.gsub!(/(-?%\})\n+\s*/m, '\\1')
+    File.open(t.name, "w+") do |f|
+      f.write(s)
+    end
+  end
+end
+task :html => html_targets
+CLEAN.include(html_targets)
+
+# CSS
+css_sources = FileList["css/*.css"]
+css_targets = css_sources.map { |f| f.pathmap("%X") }
+prep_rules_for_noext(css_sources) do |t|
+  sh "yui-compressor --type css #{t.source} >#{t.name}"
+end
+task :css => css_targets
+CLEAN.include(css_targets)
+
+task :default => [ :html, :css ]

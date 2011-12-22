@@ -1,0 +1,15 @@
+{% unless site.disqus == null %}<!-- Disqus start -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /*
+   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+   */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://{{ site.disqus }}.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript={{ site.disqus }}">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
+<!-- Disqus end -->
+{% endunless -%}

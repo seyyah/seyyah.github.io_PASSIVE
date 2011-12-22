@@ -1,0 +1,25 @@
+---
+layout: frame
+---
+<div class="site">
+  <div class="title">
+    {% include html/navigator %}
+    {% include html/logo %}
+  </div>
+
+  {% unless page.moved %}
+    {{ content }}
+  {% else %}
+    Bu girdi <a href="http://{{ page.moved }}">başka bir adrese</a>
+    taşınmıştır.  Şimdi bu sayfaya yönlendirileceksiniz.
+  {% endunless %}
+
+  <div class="footer">
+    {% include html/contact %}
+    {% include html/google %}
+    {% include html/feedurl %}
+  </div>
+</div>
+
+{% include html/ribbon %}
+{% include html/googleanalytics %}

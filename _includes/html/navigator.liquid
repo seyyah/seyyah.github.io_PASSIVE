@@ -1,0 +1,27 @@
+<!-- Navigator start -->
+<a href="{{ site.url }}/" title="Ön Sayfa" id="navtop"></a>
+{% unless site.navigator == null %}
+<span class="navigator">
+  {% capture sub %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture -%}
+  {% capture slash_sub %}/{{ sub }}{% endcapture -%}
+  {% capture indexurl %}/{{ sub }}/index.html{% endcapture -%}
+  {% for item in site.navigator -%}
+    {% capture category %}{{ item | first }}{% endcapture -%}
+    {% capture slash_category %}/{{ category }}{% endcapture -%}
+    {% capture title %}{{ item | last }}{% endcapture -%}
+    {% capture size %}{{ site.categories[category] | size }}{% endcapture -%}
+    {% unless size == "0" -%}
+      {% if slash_sub contains slash_category -%}
+	{% if page.url == indexurl -%}
+  <span class="selflink" title="{{ title }}" id="navinactive{{ category }}"></span>
+	{% else -%}
+  <a href="{{ site.url }}/{{ category }}/" title="{{ title }}" id="navinactive{{ category }}"></a>
+	{% endif -%}
+      {% else -%}
+  <a href="{{ site.url }}/{{ category }}/" title="{{ title }}" id="navactive{{ category }}"></a>
+      {% endif -%}&nbsp;
+    {% endunless -%}
+  {% endfor %}
+</span>
+{% endunless -%}
+<!-- Navigator end -->

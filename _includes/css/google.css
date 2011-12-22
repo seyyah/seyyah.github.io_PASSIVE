@@ -1,0 +1,10 @@
+.google {
+  display: inline-block;
+  margin-top: 2em;
+  padding: 0.5em;
+}
+.google .button {
+  margin-left: 0.1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}

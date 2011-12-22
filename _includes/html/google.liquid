@@ -1,0 +1,11 @@
+{% unless site.google == null %}
+<!-- Google start -->
+<div class="google">
+  <form action="http://www.google.com/search" id="search" method="get">
+    <input class="text" name="q" type="text" />
+    <input name="sitesearch" type="hidden" value="{{ site.url }}" />
+    <input class="button" type="submit" value="Ara" />
+  </form>
+</div>
+<!-- Google end -->
+{% endunless -%}

@@ -1,0 +1,158 @@
+/*
+ * -----------------------------------------------------------------------------
+ * Navigasyon
+ * -----------------------------------------------------------------------------
+ */
+
+/* top */
+#navtop {
+  background-image:url('huruf/star-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 1em;
+}
+
+/* navactive sections */
+#navactive0 {
+  background-image:url('huruf/0-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive1 {
+  background-image:url('huruf/1-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive2 {
+  background-image:url('huruf/2-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive3 {
+  background-image:url('huruf/3-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive4 {
+  background-image:url('huruf/4-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive5 {
+  background-image:url('huruf/5-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive6 {
+  background-image:url('huruf/6-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive7 {
+  background-image:url('huruf/7-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive8 {
+  background-image:url('huruf/8-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navactive9 {
+  background-image:url('huruf/9-red-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+
+/* navinactive sections */
+#navinactive0 {
+  background-image:url('huruf/0-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive1 {
+  background-image:url('huruf/1-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive2 {
+  background-image:url('huruf/2-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive3 {
+  background-image:url('huruf/3-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive4 {
+  background-image:url('huruf/4-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive5 {
+  background-image:url('huruf/5-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive6 {
+  background-image:url('huruf/6-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive7 {
+  background-image:url('huruf/7-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive8 {
+  background-image:url('huruf/8-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}
+#navinactive9 {
+  background-image:url('huruf/9-grey-32.png');
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 3em;
+}

@@ -1,0 +1,38 @@
+permalink: <%= if url == homeurl %>/:categories:month/:title<%= else %>/:categories/:title<%= end %>
+markdown: rdiscount
+rdiscount:
+  extensions: [smart]
+pygments: true
+url: <%= url %>
+exclude:
+        - Rakefile
+        - Makefile
+        - presentation.md
+        - presentation.html
+        - presentation.png
+        - media
+
+account: <%= account %>
+archive: Son Girdiler
+assets: <%= assets = '/chrome' %>
+author: <%= author %>
+disqus: ~
+email: <%= email %>
+facebook: ~
+feed: ~
+flickr: ~
+google: ~
+googleanalyticsid: ~
+googleplus: ~
+gpg: ~
+homeurl: <%= homeurl %>
+logo: <%= assets %>/19/19-normal-128x128.png
+organization: 19
+picasa: ~
+related: Diğer Girdiler
+repository: <%= repository %>
+ribbon: GitHub'dayım
+title: <%= author %>
+twitter: ~
+
+navigator: ~

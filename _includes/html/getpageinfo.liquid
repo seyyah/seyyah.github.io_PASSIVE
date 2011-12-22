@@ -1,0 +1,41 @@
+{% capture sub %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
+{% capture slash_sub %}/{{ sub }}{% endcapture %}
+{% for sect in site.categories %}
+  {% capture name %}{{ sect | first }}{% endcapture %}
+  {% capture slash_name %}/{{ name }}{% endcapture %}
+  {% if slash_sub contains slash_name %}
+    {% capture category %}{{ name }}{% endcapture %}
+    {% capture category_index %}{{ site.url }}/{{ name }}/{% endcapture %}
+    {% capture category_feed %}{{ category_index }}atom.xml{% endcapture %}
+    {% for item in site.navigator %}
+      {% capture key %}{{ item | first }}{% endcapture %}
+      {% capture value %}{{ item | last }}{% endcapture %}
+      {% if key == category %}
+        {% capture category_title %}{{ value }}{% endcapture %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% if page.title != null %}
+  {% assign title = page.title %}
+{% elsif category_title != null %}
+  {% assign title = category_title %}
+{% elsif site.title != null %}
+  {% assign title = site.title %}
+{% else %}
+  {% assign title = category %}
+{% endif %}
+{% if page.feed != null %}
+  {% assign feed = page.feed %}
+{% elsif category_feed != null %}
+  {% assign feed = category_feed %}
+{% elsif site.feed != null %}
+  {% assign feed = site.feed %}
+{% endif %}
+{% if category != null and category != "" %}
+  {% capture id %}{{ site.url }}/{{ category }}/{% endcapture %}
+  {% assign posts = site.categories[category] %}
+{% else %}
+  {% capture id %}{{ site.url }}/{% endcapture %}
+  {% assign posts = site.posts %}
+{% endif -%}

@@ -1,0 +1,32 @@
+<!-- Contact start -->
+<div class="contact">
+  <p>
+    {{ site.author }}<br />
+    {% if site.gpg %}
+    GnuPG ortak anahtar<br />
+    {% endif %}
+    Github<br />
+    {% if site.googleplus %}
+    Google Plus<br />
+    {% endif %}
+    {% if site.twitter %}
+    Twitter
+    {% endif %}
+  </p>
+</div>
+<div class="contact">
+  <p>
+    {{ site.email }}<br />
+    {% if site.gpg %}
+    <a href="{{ site.url }}/{{ site.account }}.asc"><code>{{ site.gpg }}</code></a><br />
+    {% endif %}
+    <a href="http://github.com/{{ site.account }}/">github.com/{{ site.account }}</a><br />
+    {% if site.googleplus %}
+    <a href="{{ site.googleplus }}/">{{ site.googleplus }}</a><br />
+    {% endif %}
+    {% if site.twitter %}
+    <a href="{{ site.twitter }}/">{{ site.twitter }}</a>
+    {% endif %}
+  </p>
+</div>
+<!-- Contact start -->

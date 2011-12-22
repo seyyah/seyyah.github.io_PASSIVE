@@ -1,0 +1,33 @@
+<!-- Index start -->
+{% include html/getpageinfo %}{% if page.url contains 'atom.xml' -%}<title>{{ title }}</title>
+<link href="{{ site.url }}/{{ page.url }}" rel="self"/>
+<link href="{{ site.url }}/"/>
+<updated>{{ site.time | date_to_xmlschema }}</updated>
+<id>{{ id }}</id>
+<author>
+  <name>{{ site.author }}</name>
+  <email>{{ site.email }}</email>
+</author>
+
+  {% for post in posts %}{% include html/isoutofdate %}{% unless isoutofdate %}<entry>
+  <title>{{ post.title }}-{{ post.date | date: "%y%m%d" }}</title>
+  <link href="{{ site.url }}{{ post.url }}"/>
+  <updated>{{ post.date | date_to_xmlschema }}</updated>
+  <id>{{ post.id }}</id>
+  <content type="html">{{ post.content | xml_escape }}</content>
+</entry>
+    {% endunless %}{% endfor %}{% else -%}<h1>{{ title }}</h1>
+
+<p>
+<div id="home">
+  <ul class="posts">
+
+    {% for post in posts %}{% include html/isoutofdate %}{% unless isoutofdate %}<li>
+      <span>{{ post.date | date: '%Y-%m-%d' }}</span>
+      &nbsp;&raquo;&nbsp;&nbsp;
+      <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+    </li>
+      {% endunless %}{% endfor %}</ul>
+</div>
+</p>
+{% endif -%}<!-- Index end -->

@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<div id="presentation-multicolumn">
+<p>
+{% for p in page.presentations %}
+  <a class="presentation-link" href="/{{ p }}/">
+    <span class="presentation-thumbnail"><img src="/{{ p }}/index.png"></span>
+  </a>
+{% endfor %}
+</p>
+</div>
