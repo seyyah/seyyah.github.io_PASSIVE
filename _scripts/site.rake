@@ -16,7 +16,7 @@ namespace :site do
 
   desc "siteyi sil"
   task :clean do
-    rm _rf '_site'
+    rm_rf '_site'
   end
   task :c => :clean
 
@@ -28,6 +28,7 @@ namespace :site do
     server_pid = Process.spawn("jekyll --server --auto --url http://#{HOST}:#{PORT}")
     trap('INT') do
       [server_pid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+      Rake::Task["site:clean"].invoke
       exit 0
     end
     [server_pid].each { |pid| Process.wait(pid) }
