@@ -187,9 +187,9 @@ tasktab = Hash[*TASKS.map { |k, v| [k, { :desc => v, :tasks => [] }] }.flatten]
 
 # Görevleri dinamik olarak üret
 presentation.each do |presentation, data|
-  # Her alt sunum dizini için bir görev tanımlıyoruz
+  # her alt sunum dizini için bir alt görev tanımlıyoruz
   ns = namespace presentation do
-    # Sunum dosyaları
+    # sunum dosyaları
     file data[:target] => data[:deps] do |t|
       chdir presentation do
         sh "landslide -i #{data[:conffile]}"
@@ -201,7 +201,7 @@ presentation.each do |presentation, data|
       end
     end
 
-    # Küçük resimler
+    # küçük resimler
     file data[:thumbnail] => data[:target] do
       next unless data[:public]
       sh "cutycapt " +
@@ -243,7 +243,7 @@ presentation.each do |presentation, data|
     task :default => :build
   end
 
-  # Alt görevleri görev tablosuna işle
+  # alt görevleri görev tablosuna işle
   ns.tasks.map(&:to_s).each do |t|
     _, _, name = t.partition(":").map(&:to_sym)
     next unless tasktab[name]
@@ -252,7 +252,7 @@ presentation.each do |presentation, data|
 end
 
 namespace :p do
-  # Görev tablosundan yararlanarak üst isim uzayında ilgili görevleri tanımla
+  # görev tablosundan yararlanarak üst isim uzayında ilgili görevleri tanımla
   tasktab.each do |name, info|
     desc info[:desc]
     task name => info[:tasks]
@@ -294,10 +294,6 @@ namespace :p do
   task :m => :menu
 end
 
-# Görev tablosundan yararlanarak üst isim uzayında ilgili görevleri tanımla
-tasktab.each { |k, v| task k => v }
-
-# İsim uzayıyla anılan görev öntanımlı olarak menü görüntüler
 desc "sunum menüsü"
 task :p => ["p:menu"]
 task :presentation => :p
