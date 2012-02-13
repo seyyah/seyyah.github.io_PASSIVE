@@ -87,7 +87,7 @@ def optim
   (pngs + jpgs).each do |f|
     w, h = %x{identify -format '%[fx:w] %[fx:h]' #{f}}.split.map { |e| e.to_i }
     size, i = [w, h].each_with_index.max
-    if size > IMAGE_GEOMETRY[i]
+    if size and size > IMAGE_GEOMETRY[i]
       arg = (i > 0 ? 'x' : '') + IMAGE_GEOMETRY[i].to_s
       sh "mogrify -resize #{arg} #{f}"
     end
