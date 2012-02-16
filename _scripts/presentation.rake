@@ -70,6 +70,12 @@ def png_optim(file, threshold=40000)
   png_comment(file, 'raked')
 end
 
+def png_optimized?(file)
+  # Imagemagick ile gelen identify çalışmıyor?
+  # 	identify -format '%c' #{f}} =~ /[Rr]aked/
+  system "egrep -qi 'extcomment.raked' #{file}"
+end
+
 def jpg_optim(file)
   sh "jpegoptim -q -m80 #{file}"
   sh "mogrify -comment 'raked' #{file}"
@@ -80,7 +86,7 @@ def optim
 
   # Optimize edilmişleri çıkar.
   [pngs, jpgs].each do |a|
-    a.reject! { |f| %x{identify -format '%c' #{f}} =~ /[Rr]aked/ }
+    a.reject! { |f| png_optimized?(f) }
   end
 
   # Boyut düzeltmesi yap.
