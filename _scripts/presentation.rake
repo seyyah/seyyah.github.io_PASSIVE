@@ -138,9 +138,11 @@ FileList[File.join(PRESENTATION_DIR, "[^_.]*")].each do |dir|
     end
 
     if File.exists?('index.md')
+      source = 'index.md'
       base = 'index'
       ispublic = true
     elsif File.exists?('presentation.md')
+      source = 'presentation.md'
       base = 'presentation'
       ispublic = false
     else
@@ -156,6 +158,19 @@ FileList[File.join(PRESENTATION_DIR, "[^_.]*")].each do |dir|
     deps = []
     (DEPEND_ALWAYS + landslide.values_at(*DEPEND_KEYS)).compact.each do |v|
       deps += v.split.select { |p| File.exists?(p) }.map { |p| File.to_filelist(p) }.flatten
+    end
+
+    # eklenen kod dosyalarını da bağımlılıklara ekle
+    # bu lojiğin burada yeri olmamalı, ama iş görüyor ;-)
+    dirs = landslide['includepath'].split /:/
+    IO.read(source).scan(/^[.](code|coden|include|includen)[:]\s+(\S+)/m).each do |m|
+      dirs.each do |d|
+        f = File.expand_path(File.join(d, m[1]))
+        if File.exists?(f)
+          deps << f
+          break
+        end
+      end
     end
 
     # bağımlılık ağacının çalışması için tüm yolları bu dizine göreceli yap
