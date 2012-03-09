@@ -29,6 +29,7 @@ TASKS = {
     :clean   => 'sunumları temizle',
     :view    => 'sunumları görüntüle',
     :run     => 'sunumları sun',
+    :zip     => 'sunumları paketle',
     :optim   => 'resimleri iyileştir',
     :default => 'öntanımlı görev',
 }
@@ -259,6 +260,11 @@ presentation.each do |presentation, data|
     task :clean do
       rm_f data[:target]
       rm_f data[:thumbnail]
+    end
+
+    task :zip => [:build] do
+      t = "_archive/#{data[:name]}"
+      sh "mkdir -p _archive; cp #{data[:target]} #{t}.html; zip -jm #{t}.zip #{t}.html"
     end
 
     task :default => :build
