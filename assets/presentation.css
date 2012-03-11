@@ -22,6 +22,15 @@ ul li:first {
 li p { display: inline; }
 li pre { margin-left: 2em; }
 
+a {
+  text-decoration: none;
+  color: #1571e1;
+  border: none;
+  display: inline !important;
+}
+
+code { background: #ffffd0; }
+
 /*
  * Limit pre area's height and allow using a vertical scrollbar for overflowed
  * content (I think this might be considered as the most appealing reason for
@@ -83,13 +92,6 @@ li pre { margin-left: 2em; }
 }
 .slide.first section {
   padding-top: 90px;
-}
-
-a {
-  text-decoration: none;
-  color: #1571e1;
-  border: none;
-  display: inline !important;
 }
 
 .section {
