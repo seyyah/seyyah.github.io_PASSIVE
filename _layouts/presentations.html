@@ -2,12 +2,10 @@
 layout: default
 ---
 
-<div id="presentation-multicolumn">
-<p>
+<div id="presentation-multicolumn" style="-moz-column-count: 3; -webkit-column-count: 3;">
 {% for p in page.presentations %}
   <a class="presentation-link" href="/{{ p }}/">
     <span class="presentation-thumbnail"><img src="/{{ p }}/index.png"></span>
   </a>
 {% endfor %}
-</p>
 </div>
