@@ -59,7 +59,7 @@ div.slide {
   max-height: 485px;
   padding-top: 0.25em !important;
   padding-right: 0.5em !important;
-  padding-left: 1em !important;
+  padding-left: 0.5em !important;
   overflow: auto;
   font-family: 'Monaco', 'Bitstream Vera Sans Mono', 'Lucida Console', 'FreeMono', Monospace;
 }
@@ -70,6 +70,9 @@ div.slide {
 ::-webkit-scrollbar-thumb {
   background: -webkit-gradient(linear, left bottom, left top, from(#9c000d), to(#eeeeee));
   -webkit-border-radius: 1ex;
+}
+::-webkit-scrollbar-thumb:horizontal { /* no horizontal scrollbar */
+  background: none;
 }
 ::-webkit-scrollbar-corner {
   background: #dedede;
