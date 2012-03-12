@@ -116,4 +116,7 @@ div.slide {
   color: black;
 }
 
+/* Pygments */
+.err { border: 0px; }
+
 /* end presentation.css */
