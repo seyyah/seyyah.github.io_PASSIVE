@@ -29,7 +29,23 @@ a {
   display: inline !important;
 }
 
-code { background: #ffffff; }
+code {
+  background: #ffffff;
+  padding: 0.1em;
+  padding-right: 0.15em;
+  border-top-right-radius: 0.2em;
+  -moz-border-radius-topright: 0.2em;
+  -webkit-border-top-right-radius: 0.2em;
+  border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomleft: 0.2em;
+  -webkit-border-bottom-left-radius: 0.2em;
+  border-top-left-radius: 0.2em;
+  -moz-border-radius-topleft: 0.2em;
+  -webkit-border-top-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+  -moz-border-radius-bottomright: 0.2em;
+  -webkit-border-bottom-right-radius: 0.2em;
+}
 
 div.slide {
   background: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#eaeaea));
