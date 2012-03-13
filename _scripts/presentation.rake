@@ -235,6 +235,7 @@ presentation.each do |presentation, data|
           "--delay=1000"
       sh "mogrify -resize 240 #{data[:thumbnail]}"
       png_optim(data[:thumbnail])
+      sh "touch #{data[:directory]}"
     end
 
     task :optim do
@@ -245,9 +246,7 @@ presentation.each do |presentation, data|
 
     task :index => data[:thumbnail]
 
-    task :build => [:optim, data[:target], :index] do
-        sh "touch #{data[:directory]}"
-    end
+    task :build => [:optim, data[:target], :index]
 
     task :view do
       if File.exists?(data[:target])
