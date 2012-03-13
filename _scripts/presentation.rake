@@ -26,6 +26,7 @@ DEPEND_ALWAYS  = %w(media)
 TASKS = {
     :index   => 'sunumları indeksle',
     :build   => 'sunumları oluştur',
+    :rebuild => 'sunumları (zorla) yeniden oluştur',
     :clean   => 'sunumları temizle',
     :view    => 'sunumları görüntüle',
     :run     => 'sunumları sun',
@@ -184,6 +185,7 @@ FileList[File.join(PRESENTATION_DIR, "[^_.]*")].each do |dir|
 
    presentation[dir] = {
       :basename  => basename,	# üreteceğimiz sunum dosyasının baz adı
+      :source    => source,     # lanslide kaynağı
       :conffile  => conffile,	# landslide konfigürasyonu (mutlak dosya yolu)
       :deps      => deps,	# sunum bağımlılıkları
       :directory => dir,	# sunum dizini (tepe dizine göreli)
@@ -246,7 +248,14 @@ presentation.each do |presentation, data|
 
     task :index => data[:thumbnail]
 
+    task :force do
+      sh "touch #{presentation}/#{data[:source]}"
+    end
+
     task :build => [:optim, data[:target], :index]
+
+    desc "sadece bu sunumu yeniden oluştur"
+    task :rebuild => [:force, :build]
 
     task :view do
       if File.exists?(data[:target])
@@ -267,8 +276,6 @@ presentation.each do |presentation, data|
       t = "_archive/#{data[:name]}"
       sh "mkdir -p _archive; cp #{data[:target]} #{t}.html; zip -jm #{t}.zip #{t}.html"
     end
-
-    task :default => :build
   end
 
   # alt görevleri görev tablosuna işle
