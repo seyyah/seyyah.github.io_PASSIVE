@@ -332,3 +332,7 @@ end
 desc "sunum menüsü"
 task :p => ["p:menu"]
 task :presentation => :p
+
+task :default do
+  Rake::Task["p:build"].invoke
+end
