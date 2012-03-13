@@ -245,7 +245,9 @@ presentation.each do |presentation, data|
 
     task :index => data[:thumbnail]
 
-    task :build => [:optim, data[:target], :index]
+    task :build => [:optim, data[:target], :index] do
+        sh "touch #{data[:directory]}"
+    end
 
     task :view do
       if File.exists?(data[:target])
