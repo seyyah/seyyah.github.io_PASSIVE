@@ -65,33 +65,8 @@ div.slide {
   -webkit-border-bottom-right-radius: 20px;
 }
 
-/*
- * Limit pre area's height and allow using a vertical scrollbar for overflowed
- * content (I think this might be considered as the most appealing reason for
- * using html slides involving codes).
- */
-.gist .gist-file .gist-data pre, pre {
-  font-size: 18px;
-  max-height: 485px;
-  padding-top: 0.25em !important;
-  padding-right: 0.5em !important;
-  padding-left: 0.5em !important;
-  overflow: auto;
-  font-family: 'Monaco', 'Bitstream Vera Sans Mono', 'Lucida Console', 'FreeMono', Monospace;
-}
-::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: -webkit-gradient(linear, left bottom, left top, from(#9c000d), to(#eeeeee));
-  -webkit-border-radius: 1ex;
-}
 ::-webkit-scrollbar-thumb:horizontal { /* no horizontal scrollbar */
   background: none;
-}
-::-webkit-scrollbar-corner {
-  background: #dedede;
 }
 
 .slide.achtung {
