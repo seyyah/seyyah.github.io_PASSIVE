@@ -33,16 +33,18 @@ pre, code {
 }
 
 h1 {
-  font-size: 110%;
+  font-size: 140%;
+  margin-bottom: 1em;
 }
 
-h2, h3, h4, h5, h6 {
-  font-size: 110%;
+h2 {
+  font-size: 130%;
   margin-top: 1em;
 }
 
-h1 {
-  margin-bottom: 1em;
+h3, h4, h5, h6 {
+  font-size: 110%;
+  margin-top: 1em;
 }
 
 p {
