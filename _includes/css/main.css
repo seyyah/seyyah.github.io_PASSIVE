@@ -30,7 +30,6 @@ body {
 
 pre, code {
   font-family: Monaco, monospace;
-  font-size: 110%;
 }
 
 h1 {
@@ -222,7 +221,7 @@ ul.posts {
   #post code {
     border: 1px solid #ddd;
     background-color: #eef;
-    font-size: 85%;
+    font-size: 95%;
     padding: 0 .2em;
   }
 
