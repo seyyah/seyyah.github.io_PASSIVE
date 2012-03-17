@@ -46,6 +46,9 @@ code {
   -moz-border-radius-bottomright: 0.2em;
   -webkit-border-bottom-right-radius: 0.2em;
 }
+pre {
+  background: none;
+}
 
 div.slide {
   background: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#eaeaea));
