@@ -237,7 +237,6 @@ presentation.each do |presentation, data|
           "--delay=1000"
       sh "mogrify -resize 240 #{data[:thumbnail]}"
       png_optim(data[:thumbnail])
-      sh "touch #{data[:directory]}"
     end
 
     task :optim do
@@ -259,7 +258,7 @@ presentation.each do |presentation, data|
 
     task :view do
       if File.exists?(data[:target])
-        sh "touch #{data[:directory]}; #{browse_command data[:target]}"
+        sh "#{browse_command data[:target]}"
       else
         $stderr.puts "#{data[:target]} bulunamadı; önce inşa edin"
       end
@@ -310,7 +309,7 @@ namespace :p do
   task :menu do
     lookup = Hash[
       *presentation.sort_by do |k, v|
-        File.mtime(v[:directory])
+        File.mtime(File.exists?(v[:target]) ? v[:target] : v[:directory])
       end
       .reverse
       .map { |k, v| [v[:name], k] }
