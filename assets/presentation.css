@@ -68,6 +68,9 @@ div.slide {
   -webkit-border-bottom-right-radius: 20px;
 }
 
+::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left bottom, left top, from(#9c000d), to(#eee));
+}
 ::-webkit-scrollbar-thumb:horizontal { /* no horizontal scrollbar */
   background: none;
 }
