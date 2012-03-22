@@ -1,5 +1,14 @@
 /* begin presentation.css */
 
+@font-face {
+  font-family: 'Monaco';
+  src: url(fonts/monaco.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Titling';
+  src: url(fonts/ubuntu-titling.woff) format('woff');
+}
+
 ul li {
   list-style: none;
   list-style-type: none;
