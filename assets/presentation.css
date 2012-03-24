@@ -120,7 +120,6 @@ div.slide {
   -moz-border-radius: 0.15em 0.15em 0.15em 0.15em;
   border-radius: 0.15em 0.15em 0.15em 0.15em;
   height: 80px;
-  font-family: 'Ubuntu Titling', 'Lucida Grande';
 }
 .slide.first section {
   padding-top: 90px;
