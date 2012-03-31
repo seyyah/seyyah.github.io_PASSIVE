@@ -219,9 +219,9 @@ presentation.each do |presentation, data|
       chdir presentation do
         %x(landslide -i #{data[:conffile]})
         # XXX: Slayt bağlamı iOS tarayıcılarında sorun çıkarıyor.  Kirli bir çözüm!
-        cmd=%q[
-          sed -i -e "s/^\([[:blank:]]*var hiddenContext *= *\)false\(;[[:blank:]]*$\)/\1true\2/" presentation.html
-        ]; %x(#{cmd})
+        # cmd=%q[
+        #   sed -i -e "s/^\([[:blank:]]*var hiddenContext *= *\)false\(;[[:blank:]]*$\)/\1true\2/" presentation.html
+        # ]; %x(#{cmd})
         unless data[:basename] == 'presentation.html'
           mv 'presentation.html', data[:basename]
         end
