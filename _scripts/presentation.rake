@@ -236,8 +236,8 @@ presentation.each do |presentation, data|
           --url=file://#{File.absolute_path(data[:target])}#slide1 \
           --out=#{data[:thumbnail]} \
           --user-style-string='div.slides { width: 900px; overflow: hidden; }' \
-          --min-width=1024 \
-          --min-height=768 \
+          --min-width=960 \
+          --min-height=720 \
           --delay=1000
       )
       %x(mogrify -resize 240 #{data[:thumbnail]})
