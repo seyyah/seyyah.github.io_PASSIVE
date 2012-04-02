@@ -3,9 +3,9 @@
 ul li {
   list-style: none;
   list-style-type: none;
-  margin-left: -1.5em;
+  margin-left: -26px;
   padding-left: 1em;
-  text-indent: -1.45em;
+  text-indent: -32px;
 }
 ul li pre { text-indent: 0; }
 ul li:before {
