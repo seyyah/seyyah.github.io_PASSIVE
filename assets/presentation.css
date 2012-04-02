@@ -59,7 +59,7 @@ code {
   -moz-border-radius-bottomright: 0.2em;
   -webkit-border-bottom-right-radius: 0.2em;
 }
-pre {
+pre, pre code {
   background: none;
 }
 
