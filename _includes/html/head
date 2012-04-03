@@ -7,4 +7,4 @@
   {% endif %}<link rel="stylesheet" href="{{ site.assets }}/site.css"   type="text/css" media="screen, projection" />
   <link rel="stylesheet" href="{{ site.assets }}/syntax.css" type="text/css" />
   <link rel="stylesheet" href="{{ site.assets }}/local.css"  type="text/css" media="screen, projection" />
-</head>
+  {% include html/googleanalytics %}</head>
