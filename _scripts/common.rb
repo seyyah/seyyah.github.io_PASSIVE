@@ -105,6 +105,15 @@ module Interactive
 end
 include Interactive
 
+def die(message)
+    $stderr.puts color(message, :error)
+    exit 1
+end
+
+def cry(message)
+    $stderr.puts color(message, :warning)
+end
+
 # ------------------------------------------------------------------------------
 # İlklendir
 # ------------------------------------------------------------------------------
@@ -113,4 +122,9 @@ include Interactive
 BEGIN {
   require 'yaml'
   Config = YAML.load_file('_config.yml')
+  # Geriye doğru uyumluluk için
+  if ! Config["domain"] || Config["domain"].empty?
+    Config["domain"] = Config["homeurl"].gsub(/^https?:\/\//, '') if Config["homeurl"]
+    Config["domain"] = Config["homeurl"].gsub(/\/+$/, '') if Config["homeurl"]
+  end
 }
