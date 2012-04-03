@@ -39,4 +39,3 @@ end
 # İsim uzayıyla anılan görev öntanımlı olarak siteyi oluştur ve görüntüle
 desc "siteyi oluştur ve görüntüle"
 task :site => ["site:run"]
-task :s => :site

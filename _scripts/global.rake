@@ -10,3 +10,6 @@ task :submit do
   %x(git commit -a -m #{GIT_AUTO_COMMIT_MESSAGE})
   %x(git push)
 end
+
+# Kısayol
+task :s => submit
