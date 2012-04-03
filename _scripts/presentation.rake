@@ -127,7 +127,7 @@ end
 # Alt dizinlerde yapılandırma dosyasına mutlak dosya yoluyla erişiyoruz
 default_conffile = File.expand_path(DEFAULT_CONFFILE)
 
-new_files = %w(assets/local.css assets/local.js)
+new_files = %w(assets/my.css assets/my.js)
 js_template = File.join('_templates', File.basename(DEFAULT_JSFILE)) + '.erb'
 
 if File.exists? js_template
