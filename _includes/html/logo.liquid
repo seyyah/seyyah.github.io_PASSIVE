@@ -1,5 +1,10 @@
 {% unless site.logo == null %}
 <!-- Logo start -->
-<a href="{{ site.homeurl }}/" title="logo" id="logo" style="background-image:url('{{ site.logo }}');"></a>
+{% if site.homeurl != null %}
+{% capture homeurl %}{{ site.homeurl }}{% endcapture %}
+{% elsif site.domain != null %}
+{% capture homeurl %}http://{{ site.domain }}{% endcapture %}
+{% endif -%}
+<a href="{{ homeurl }}/" title="logo" id="logo" style="background-image:url('{{ site.logo }}');"></a>
 <!-- Logo end -->
 {% endunless -%}
