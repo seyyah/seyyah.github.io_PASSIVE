@@ -2,8 +2,8 @@
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '{{ site.googleanalyticsid }}']);
-  _gaq.push(['_setDomainName', '{{ site.homeurl }}']);
-  _gaq.push(['_trackPageview']);
+{% unless site.domain == null %}_gaq.push(['_setDomainName', '{{ site.domain }}']);
+{% endunless -%}_gaq.push(['_trackPageview']);
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
