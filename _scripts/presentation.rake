@@ -126,20 +126,19 @@ end
 
 # Alt dizinlerde yapılandırma dosyasına mutlak dosya yoluyla erişiyoruz
 default_conffile = File.expand_path(DEFAULT_CONFFILE)
-default_jsfile   = File.expand_path(DEFAULT_JSFILE)
 
 new_files = %w(assets/local.css assets/local.js)
-js_template = File.join('_templates', File.basename(default_jsfile)) + '.erb'
+js_template = File.join('_templates', File.basename(DEFAULT_JSFILE)) + '.erb'
 
 if File.exists? js_template
-  file default_jsfile => [js_template, '_config.yml'] do |t|
+  file DEFAULT_JSFILE => [js_template, '_config.yml'] do |t|
     content = ERB.new(File.read(t.prerequisites[0])).result(BINDING)
     isnew = ! File.exists?(t.name)
     File.open(t.name, 'w') { |f| f.write content }
-    cry "yeni dosya: '#{f}'; 'git add' ile depoya eklemeyi unutmayın" if isnew
+    cry "yeni dosya: '#{t.name}'; 'git add' ile depoya eklemeyi unutmayın" if isnew
   end
 else
-    new_files << default_jsfile
+    new_files << DEFAULT_JSFILE
 end
 
 new_files.each do |f|
@@ -155,7 +154,6 @@ FileList[File.join(PRESENTATION_DIR, "[^_.]*")].each do |dir|
   deps = []
 
   deps << default_conffile
-  deps << default_jsfile
 
   chdir dir do
     name = File.basename(dir)
@@ -190,8 +188,11 @@ FileList[File.join(PRESENTATION_DIR, "[^_.]*")].each do |dir|
     target = File.to_herepath(basename)
 
     # bağımlılık verilecek tüm dosyaları listele
-    (DEPEND_ALWAYS + landslide.values_at(*DEPEND_KEYS)).compact.each do |v|
+    DEPEND_ALWAYS.compact.each do |v|
       deps += v.split.select { |p| File.exists?(p) }.map { |p| File.to_filelist(p) }.flatten
+    end
+    landslide.values_at(*DEPEND_KEYS).compact.each do |v|
+      deps += v.split.map { |p| File.to_filelist(p) }.flatten
     end
 
     # eklenen kod dosyalarını da bağımlılıklara ekle
