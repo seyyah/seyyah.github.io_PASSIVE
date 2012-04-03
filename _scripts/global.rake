@@ -12,4 +12,4 @@ task :submit do
 end
 
 # Kısayol
-task :s => submit
+task :s => :submit
