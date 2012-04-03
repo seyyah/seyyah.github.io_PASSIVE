@@ -1,4 +1,4 @@
-permalink: <%= if url == homeurl %>/:categories:month/:title<%= else %>/:categories/:title<%= end %>
+permalink: <%= if url == 'http://' + domain %>/:categories:month/:title<%= else %>/:categories/:title<%= end %>
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
@@ -25,7 +25,7 @@ google: ~
 googleanalyticsid: ~
 googleplus: ~
 gpg: ~
-homeurl: <%= homeurl %>
+domain: <%= domain %>
 logo: <%= assets %>/19/19-normal-128x128.png
 organization: 19
 picasa: ~
