@@ -1,0 +1,41 @@
+permalink: /:categories:month/:title
+markdown: rdiscount
+rdiscount:
+  extensions: [smart]
+pygments: true
+url: http://seyyah.me
+exclude:
+        - Rakefile
+        - Makefile
+        - presentation.md
+        - presentation.html
+        - presentation.png
+        - media
+
+account: seyyah
+archive: Son Girdiler
+assets: /assets
+author: Nurettin Şenyer
+disqus: 19
+email: seyyah@bil.omu.edu.tr
+facebook: ~
+feed: ~
+flickr: ~
+google: ~
+googleanalyticsid: ~
+googleplus: ~
+gpg: ~
+domain: seyyah.me
+logo: /assets/19/19-normal-128x128.png
+organization: 19
+picasa: ~
+related: Diğer Girdiler
+repository: seyyah.github.com
+ribbon: GitHub'dayım
+title: Nurettin Şenyer
+twitter: ~
+
+navigator:
+        0: Teknik Olmayan Yazılar
+        1: Teknik Yazılar
+
