@@ -207,5 +207,3 @@ Test edelim: `$ cucumber`
 
 .code: code/first_taste/10/calc.rb -1 $
 
----
-
