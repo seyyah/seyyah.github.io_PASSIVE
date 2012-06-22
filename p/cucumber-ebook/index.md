@@ -207,3 +207,9 @@ Test edelim: `$ cucumber`
 
 .code: code/first_taste/10/calc.rb -1 $
 
+---
+
+# Cucumber: tamamı yeşillendi
+
+![fixme](http://i.imgur.com/AP3wP.png)
+
