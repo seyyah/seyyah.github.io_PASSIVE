@@ -12,3 +12,19 @@ Samsun
 
 .qr: 150|http://seyyah.me/p/slim-ipucu
 
+---
+
+# Kısa kısa
+
+String içerisinde ruby kodu
+
+	!ruby
+	foo="bar#{baz}"
+
+Döngü kurarken
+
+	!ruby
+	- [:foo, :bar].each do |k|
+	  a href="#" =k
+
+Açıklama satırı için: `/` ve `/!` kullanılır.
