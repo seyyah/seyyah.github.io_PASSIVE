@@ -10,7 +10,7 @@ Haziran, 2012
 
 Samsun
 
-.qr: 150|http://seyyah.me/p/cucumber
+.qr: 150|http://seyyah.me/p/cucumber-senaryo-hello
 
 ---
 
