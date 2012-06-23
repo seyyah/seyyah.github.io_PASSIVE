@@ -213,3 +213,77 @@ Test edelim: `$ cucumber`
 
 ![fixme](http://i.imgur.com/AP3wP.png)
 
+---
+
+# Chapter 3: Gherkin Basics
+
+.code: code/gherkin_basics/sample.feature
+
+---
+
+# 3.2 Format and Syntax
+## Keywords
+
+Gherkin anahtar kelimeleri
+
+	!feature
+	Feature
+	Background
+	Scenario
+	Given
+	When
+	Then
+	And
+	But
+	*
+	Scenario Outline
+	Examples
+
+**Anahtar kelimeler insan içindir, Cucumber göz ardı eder**
+
+---
+
+# 3.4 Scenario
+
+Scenarios all follow the same pattern:
+
+1. **context**: Get the system into a particular state.
+2. **action**: Poke it (or tickle it, or ...).
+3. **outcome**: Examine the new state.
+
+Örnek,
+
+	!ruby
+	Scenario: Successful withdrawal from an account in credit
+	  Given I have $100 in my account # the context
+	  When I request $20 		# the event(s)
+	  Then $20 should be dispensed 	# the outcome(s)
+
+So, we use
+
+- `Given` to set up the **context** where the scenario happens,
+
+- `When` to **interact** with the system somehow, and
+
+- `Then` to check that the **outcome** of that interaction was what we expected.
+
+---
+
+# Chapter 4: Step Definitions
+## :From the Outside
+
+Örnek
+
+	!ruby
+	Given I have $100 in my Account
+
+Step tanımında şunların yapılması gerekir,
+
+- daha önceden oluşturulmadıysa, bir account oluştur
+- kasasına 100$ koy
+
+---
+
+# Step definitions are translators
+
+![fixme](http://i.imgur.com/IastL.png)

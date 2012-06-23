@@ -1618,7 +1618,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/23
+              1/28
             </aside>
           </footer>
         </div>
@@ -1656,7 +1656,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              2/23
+              2/28
             </aside>
           </footer>
         </div>
@@ -1684,7 +1684,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              3/23
+              3/28
             </aside>
           </footer>
         </div>
@@ -1722,7 +1722,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              4/23
+              4/28
             </aside>
           </footer>
         </div>
@@ -1773,7 +1773,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              5/23
+              5/28
             </aside>
           </footer>
         </div>
@@ -1825,7 +1825,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              6/23
+              6/28
             </aside>
           </footer>
         </div>
@@ -1855,7 +1855,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              7/23
+              7/28
             </aside>
           </footer>
         </div>
@@ -1883,7 +1883,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              8/23
+              8/28
             </aside>
           </footer>
         </div>
@@ -1920,7 +1920,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              9/23
+              9/28
             </aside>
           </footer>
         </div>
@@ -1950,7 +1950,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              10/23
+              10/28
             </aside>
           </footer>
         </div>
@@ -1992,7 +1992,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              11/23
+              11/28
             </aside>
           </footer>
         </div>
@@ -2042,7 +2042,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              12/23
+              12/28
             </aside>
           </footer>
         </div>
@@ -2072,7 +2072,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              13/23
+              13/28
             </aside>
           </footer>
         </div>
@@ -2120,7 +2120,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              14/23
+              14/28
             </aside>
           </footer>
         </div>
@@ -2150,7 +2150,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              15/23
+              15/28
             </aside>
           </footer>
         </div>
@@ -2198,7 +2198,7 @@ features/step_definitions/foo_steps.rb
             </aside>
             
             <aside class="page_number">
-              16/23
+              16/28
             </aside>
           </footer>
         </div>
@@ -2234,7 +2234,7 @@ features/step_definitions/foo_steps.rb
             </aside>
             
             <aside class="page_number">
-              17/23
+              17/28
             </aside>
           </footer>
         </div>
@@ -2268,7 +2268,7 @@ features/step_definitions/foo_steps.rb
             </aside>
             
             <aside class="page_number">
-              18/23
+              18/28
             </aside>
           </footer>
         </div>
@@ -2303,7 +2303,7 @@ features/step_definitions/foo_steps.rb
             </aside>
             
             <aside class="page_number">
-              19/23
+              19/28
             </aside>
           </footer>
         </div>
@@ -2331,7 +2331,7 @@ features/step_definitions/foo_steps.rb
             </aside>
             
             <aside class="page_number">
-              20/23
+              20/28
             </aside>
           </footer>
         </div>
@@ -2384,7 +2384,7 @@ features/step_definitions/foo_steps.rb
             </aside>
             
             <aside class="page_number">
-              21/23
+              21/28
             </aside>
           </footer>
         </div>
@@ -2420,7 +2420,7 @@ features/step_definitions/foo_steps.rb
             </aside>
             
             <aside class="page_number">
-              22/23
+              22/28
             </aside>
           </footer>
         </div>
@@ -2450,7 +2450,230 @@ features/step_definitions/foo_steps.rb
             </aside>
             
             <aside class="page_number">
-              23/23
+              23/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Chapter 3: Gherkin Basics</h1></header>
+            
+            
+            <section><p><div class="highlight"><pre><span class="k">Feature:</span><span class="nf"> Feedback when entering invalid credit card details</span>
+
+<span class="nf">  In user testing we&#39;ve seen a lot of people who made mistakes</span>
+<span class="nf">  entering their credit card. We need to be as helpful as possible</span>
+<span class="nf">  here to avoid losing users at this crucial stage of the</span>
+<span class="nf">  transaction.</span>
+
+<span class="nf">  </span><span class="k">Background:</span><span class="nf"></span>
+<span class="k">    Given </span><span class="nf">I have chosen some items to buy</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">I am about to enter my credit card details</span>
+
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Credit card number too short</span>
+<span class="k">    When </span><span class="nf">I enter a card number that&#39;s only </span><span class="s">15</span><span class="nf"> digits long</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">all the other details are correct</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">I submit the form</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">the form should be redisplayed</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">I should see a message advising me of the correct number of digits</span>
+
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Expiry date invalid</span>
+<span class="k">    When </span><span class="nf">I enter a card expiry date that&#39;s in the past</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">all the other details are correct</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">I submit the form</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">the form should be redisplayed</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">I should see a message telling me the expiry date must be wrong</span>
+</pre></div>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>3.2 Format and Syntax</h1></header>
+            
+            
+            <section><h2>Keywords</h2>
+<p>Gherkin anahtar kelimeleri</p>
+<pre><code>!feature
+Feature
+Background
+Scenario
+Given
+When
+Then
+And
+But
+*
+Scenario Outline
+Examples
+</code></pre>
+<p><strong>Anahtar kelimeler insan içindir, Cucumber göz ardı eder</strong></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>3.4 Scenario</h1></header>
+            
+            
+            <section><p>Scenarios all follow the same pattern:</p>
+<ol>
+<li><strong>context</strong>: Get the system into a particular state.</li>
+<li><strong>action</strong>: Poke it (or tickle it, or ...).</li>
+<li><strong>outcome</strong>: Examine the new state.</li>
+</ol>
+<p>Örnek,</p>
+<div class="highlight"><pre><span class="no">Scenario</span><span class="p">:</span> <span class="no">Successful</span> <span class="n">withdrawal</span> <span class="n">from</span> <span class="n">an</span> <span class="n">account</span> <span class="k">in</span> <span class="n">credit</span>
+  <span class="no">Given</span> <span class="n">I</span> <span class="n">have</span> <span class="vg">$100</span> <span class="k">in</span> <span class="n">my</span> <span class="n">account</span> <span class="c1"># the context</span>
+  <span class="no">When</span> <span class="n">I</span> <span class="n">request</span> <span class="vg">$20</span>        <span class="c1"># the event(s)</span>
+  <span class="no">Then</span> <span class="vg">$20</span> <span class="n">should</span> <span class="n">be</span> <span class="n">dispensed</span>  <span class="c1"># the outcome(s)</span>
+</pre></div>
+
+<p>So, we use</p>
+<ul>
+<li>
+<p><code>Given</code> to set up the <strong>context</strong> where the scenario happens,</p>
+</li>
+<li>
+<p><code>When</code> to <strong>interact</strong> with the system somehow, and</p>
+</li>
+<li>
+<p><code>Then</code> to check that the <strong>outcome</strong> of that interaction was what we expected.</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Chapter 4: Step Definitions</h1></header>
+            
+            
+            <section><h2>:From the Outside</h2>
+<p>Örnek</p>
+<div class="highlight"><pre><span class="no">Given</span> <span class="n">I</span> <span class="n">have</span> <span class="vg">$100</span> <span class="k">in</span> <span class="n">my</span> <span class="no">Account</span>
+</pre></div>
+
+<p>Step tanımında şunların yapılması gerekir,</p>
+<ul>
+<li>daha önceden oluşturulmadıysa, bir account oluştur</li>
+<li>kasasına 100$ koy</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Step definitions are translators</h1></header>
+            
+            
+            <section><p><img alt="fixme" src="http://i.imgur.com/IastL.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/28
             </aside>
           </footer>
         </div>
@@ -2599,6 +2822,36 @@ features/step_definitions/foo_steps.rb
       <tr id="toc-row-23">
         <th><a href="#slide23">Cucumber: tamamı yeşillendi</a></th>
         <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Chapter 3: Gherkin Basics</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">3.2 Format and Syntax</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">3.4 Scenario</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">Chapter 4: Step Definitions</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Step definitions are translators</a></th>
+        <td><a href="#slide28">28</a></td>
       </tr>
       
       
