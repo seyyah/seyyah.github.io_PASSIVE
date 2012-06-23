@@ -443,3 +443,69 @@ Step,
 
 TODO: cucumber çıktı
 
+---
+
+# 5.3 Scenario Outline
+
+---
+
+# Examples: before
+
+Feature,
+
+.code: code/expressive_scenarios/05/features/examples_before.feature
+
+---
+
+# Examples: after
+
+Feature,
+
+.code: code/expressive_scenarios/06/features/examples_after.feature
+
+---
+
+# Examples: dry
+
+Feature,
+
+.code: code/expressive_scenarios/07/features/examples_dry.feature
+
+---
+
+# Examples: dry: with failure case
+
+Feature,
+
+.code: code/expressive_scenarios/08/features/examples_dry_with_failure_case.feature
+
+Özellikle en **alt** satırda ki hata mesajına bakın.
+
+---
+
+# Examples: Multiple Tables
+
+Feature,
+
+.code: code/expressive_scenarios/09/features/examples_multiple_tables.feature
+
+---
+
+# Examples: Explain Yourself
+
+Feature,
+
+.code: code/expressive_scenarios/10/features/examples_explain_yourself.feature
+
+---
+
+# Examples: Explain Yourself Detaily
+
+Feature,
+
+.code: code/expressive_scenarios/11/features/examples_explain_yourself_detaily.feature
+
+---
+
+# 5.4 Nesting Steps
+
