@@ -60,6 +60,15 @@ Cucumber:Wiki [Tags](https://github.com/cucumber/cucumber/wiki/Tags)
 
 ---
 
+# Shell
+
+- `Examples` kullanıyorken her bir örneği ayrı ayrı ekrana dökmeyi istersen
+
+		!bash
+		$ cucumber --expand
+
+---
+
 # Okunacaklar Listesi
 
 - [15 Expert Tips for Using Cucumber](http://www.engineyard.com/blog/2009/15-expert-tips-for-using-cucumber/)
