@@ -355,3 +355,91 @@ Step tanımında farklı kitaplık seçenekleri vardır: RSpec, MiniTest, Wrong
 
 ---
 
+# Chapter 5: Expressive Scenarios
+
+- Önce kurulama yapalım.
+
+- araçlar: `scenario outlines` ve `data tables`
+
+- ve `Background`
+
+---
+
+# 5.1 Background
+
+- Tümüne ait ortak adımlar
+
+- Background'da genelde `Given` (bazen `When`) oluşur
+    + Senaryolar üç paternden oluşuyordu: conext, action, outcome (bkz: 3.4
+      Scenario)
+
+        * `Given`: context'i oturtmak için
+        * `When`: action'ı seçmede
+        * `Then`: outcome'ı görmede
+
+---
+
+# Background: before
+
+before,
+
+.code: code/expressive_scenarios/00/background_before.feature
+
+her bir adımda ilk üç satır aynı/ortak
+
+---
+
+# Background: after
+
+after,
+
+.code: code/expressive_scenarios/00/background_after.feature
+
+---
+
+# 5.2 Data Tables
+
+Feature,
+
+.code: code/expressive_scenarios/01/features/tic_tac_toe.feature
+
+---
+
+# Step 01: Pending
+
+Step,
+
+.code: code/expressive_scenarios/01/features/step_definitions/board_steps.rb 9 $
+
+TODO: cucumber çıktı
+
+---
+
+# Step 02: Table to Array
+
+Step,
+
+.code: code/expressive_scenarios/02/features/step_definitions/board_steps.rb 9 $
+
+TODO: cucumber çıktı
+
+---
+
+# Step 03: Comparing Tables with Diff
+
+Step,
+
+.code: code/expressive_scenarios/03/features/step_definitions/board_steps.rb 9 $
+
+TODO: cucumber çıktı
+
+---
+
+# Step 04: Implementation
+
+Step,
+
+.code: code/expressive_scenarios/04/features/step_definitions/board_steps.rb 9 $
+
+TODO: cucumber çıktı
+

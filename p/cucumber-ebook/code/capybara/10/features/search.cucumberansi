@@ -1,0 +1,31 @@
+Feature: Search
+
+  Scenario: Find messages by content
+    [32mGiven a User has posted the following messages:[0m
+      | [32mcontent           [0m[0m |[0m
+      | [32mI am making dinner[0m[0m |[0m
+      | [32mI just woke up    [0m[0m |[0m
+      | [32mI am going to work[0m[0m |[0m
+    [32mWhen I search for "[32m[1mI am[0m[0m[32m"[0m
+    [32mThen the results should be:[0m
+      | [32mcontent           [0m[0m |[0m
+      | [32mI am making dinner[0m[0m |[0m
+      | [32mI am going to work[0m[0m |[0m
+
+  # START:auto-search
+  [36m@javascript[0m
+  Scenario: Find messages by content using auto-search
+    [32mGiven a User has posted the following messages:[0m
+      | [32mcontent           [0m[0m |[0m
+      | [32mI am making dinner[0m[0m |[0m
+      | [32mI just woke up    [0m[0m |[0m
+      | [32mI am going to work[0m[0m |[0m
+    [32mWhen I enter "[32m[1mI am[0m[0m[32m" in the search field[0m
+    [32mThen the results should be:[0m
+      | [32mcontent           [0m[0m |[0m
+      | [32mI am making dinner[0m[0m |[0m
+      | [32mI am going to work[0m[0m |[0m
+
+2 scenarios ([32m2 passed[0m)
+6 steps ([32m6 passed[0m)
+0m5.060s

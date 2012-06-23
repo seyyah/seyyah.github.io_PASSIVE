@@ -1,0 +1,39 @@
+Feature: Search
+
+  Scenario: Find messages by content
+    [32mGiven a User has posted the following messages:[0m
+      | [32mcontent           [0m[0m |[0m
+      | [32mI am making dinner[0m[0m |[0m
+      | [32mI just woke up    [0m[0m |[0m
+      | [32mI am going to work[0m[0m |[0m
+    [32mWhen I search for "[32m[1mI am[0m[0m[32m"[0m
+    [32mThen the results should be:[0m
+      | [32mcontent           [0m[0m |[0m
+      | [32mI am making dinner[0m[0m |[0m
+      | [32mI am going to work[0m[0m |[0m
+
+  # START:auto-search
+  [36m@javascript[0m
+  Scenario: Find messages by content using auto-search
+    [32mGiven a User has posted the following messages:[0m
+      | [32mcontent           [0m[0m |[0m
+      | [32mI am making dinner[0m[0m |[0m
+      | [32mI just woke up    [0m[0m |[0m
+      | [32mI am going to work[0m[0m |[0m
+    [33mWhen I enter "I am" in the search field[0m
+[33m      Undefined step: "I enter "I am" in the search field" (Cucumber::Undefined)[0m
+[33m      features/search.feature:22[0m
+    [36mThen the results should be:[0m
+      | [36mcontent           [0m[0m |[0m
+      | [36mI am making dinner[0m[0m |[0m
+      | [36mI am going to work[0m[0m |[0m
+
+2 scenarios ([33m1 undefined[0m, [32m1 passed[0m)
+6 steps ([36m1 skipped[0m, [33m1 undefined[0m, [32m4 passed[0m)
+0m1.058s
+[33m[0m
+[33mYou can implement step definitions for undefined steps with these snippets:[0m
+[33m[0m
+[33mWhen /^I enter "([^"]*)" in the search field$/ do |arg1|[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
