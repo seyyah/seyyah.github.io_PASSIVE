@@ -286,4 +286,72 @@ Step tanımında şunların yapılması gerekir,
 
 # Step definitions are translators
 
-![fixme](http://i.imgur.com/IastL.png)
+<img src="http://i.imgur.com/IastL.png" height="500">
+
+---
+
+# 4.1 Steps and Step Definitions
+
+.code: code/step_definitions/intro/features/cash_withdrawal.feature
+
+---
+
+# 4.4 Flexibility: singular x plural
+
+Feature'da yazılan şu iki ifade için,
+
+    !ruby
+    Given I have   1 cucumber  in my basket
+    Given I have 256 cucumbers in my basket
+
+Step tanımı şöyle olmalıdır,
+
+    !ruby
+    Given /I have (\d+) cucumbers? in my basket/ do |number|
+      # TODO: code goes here
+    end
+
+---
+
+# Alternation
+
+Feature'da yazılan şu iki ifade için,
+
+    !ruby
+    When I visit the homepage
+    When I go to the homepage
+
+Step tanımı şöyle olmalıdır,
+
+    !ruby
+    When /I (?:visit|go to) the homepage/ do
+      # TODO: code goes here
+    end
+
+---
+
+# How Cucumber executes a scenario
+
+TODO: sayfa 53, figure 5
+
+Burada senaryo için dört duruma dikkat:
+
+- <font color=yellow>Undefined, Pending,</font>
+- <font color=red>Failed</font>, <font color=green>Passed</font>
+
+---
+
+# Choosing Your Assertion Library
+
+Step tanımında farklı kitaplık seçenekleri vardır: RSpec, MiniTest, Wrong
+
+    !ruby
+    # RSpec
+    >> require 'rspec/expectations'
+    >> "green".should == "cucumber"
+    RSpec::Expectations::ExpectationNotMetError:
+      expected: "cucumber"
+           got: "green" (using ==)
+
+---
+
