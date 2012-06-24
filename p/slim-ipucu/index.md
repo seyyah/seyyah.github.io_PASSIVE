@@ -28,3 +28,10 @@ Döngü kurarken
 	  a href="#" =k
 
 Açıklama satırı için: `/` ve `/!` kullanılır.
+
+---
+
+# Kaynaklar
+
+- Github deposunun
+  [Readme](https://github.com/stonean/slim/blob/master/README.md)
