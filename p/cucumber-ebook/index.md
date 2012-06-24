@@ -920,3 +920,109 @@ Teller şöyleydi,
 ihtiyacı karşılayacak biçimde geliştirelim,
 
 .code: code/step_definitions_inside/13/features/step_definitions/steps.rb 19 27
+
+---
+
+# Step
+
+Step'in önceki hali,
+
+.code: code/step_definitions_inside/12/features/step_definitions/steps.rb 52 55
+
+güncellersek,
+
+.code: code/step_definitions_inside/13/features/step_definitions/steps.rb 65 67
+
+`teller` accessor üzerinden erişilecek,
+
+.code: code/step_definitions_inside/13/features/step_definitions/steps.rb 52 54
+
+---
+
+# CashSlot
+
+CashSlot önceden,
+
+.code: code/step_definitions_inside/12/features/step_definitions/steps.rb 24 28
+
+yeni hali,
+
+.code: code/step_definitions_inside/13/features/step_definitions/steps.rb 29 37
+
+---
+
+# Timü yeşillendi...
+
+![f](http://i.imgur.com/IqPlN.png)
+
+---
+
+# 7.4 Organizing the Code
+
+- uygulama domain'ine dair modeller `lib` dizinine
+
+- `KnowsTheDomain` modülü kendi dosyasına taşınacak
+
+- `Transform` kendi dosyasına taşınacak
+
+- Step dosyası bölünecek
+
+---
+
+# Separating the Application Code
+
+- Uygulamaya dair kodlar: `Account`, `Teller`, `CashSlot`
+
+- bunları `lib/nice_bank.rb`'ye taşı
+
+    + Rails'de buna gerek yok!
+
+- step dosyasında yolu belirt,
+
+.code: code/step_definitions_inside/14/features/step_definitions/steps.rb 9
+
+- bu der ki `./../../lib/nice_bank.rb`'ye de bak/require et.
+
+---
+
+# Booting the Cucumber Environment
+
+- cucumber başlamadan önce `features/support` klasörü altında ki dosyaları da yükler.
+
+- Step tanımlarına destek/support buradan gelecek.
+
+- uygulama kodlarına da erişmek hedeflediğimizden `support/env.rb`'de,
+
+.code: code/step_definitions_inside/15/features/support/env.rb 9
+
+---
+
+# Transforms and World Module
+
+- Transforms: `support/transforms.rb`
+
+- World Module: `support/world_extensions.rb`
+
+---
+
+# Organizing Our Step Definitions
+
+- her bir model/domain başına bir dosya oluşturarak organize et
+
+- Bu durumda,
+
+        !bash
+        features/step_definitions/account_steps.rb
+        features/step_definitions/teller_steps.rb
+        features/step_definitions/cash_slot_steps.rb
+
+- hızlı bakış: `cucumber --dry-run`
+
+---
+
+# Chapter 8: Support Code
+
+
+
+
+

@@ -7,31 +7,31 @@
 # Visit http://www.pragmaticprogrammer.com/titles/hwcuc for more book information.
 #---
 class Account
-  def deposit(amount)
+  def deposit(amount) # yatir
     @balance = amount
   end
 
-  def balance
+  def balance # bakiye
     @balance
   end
 end
 
-class Teller
+class Teller # kasiyer
   def initialize(cash_slot)
     @cash_slot = cash_slot
   end
 
-  def withdraw_from(account, amount)
+  def withdraw_from(account, amount) # para cek
     @cash_slot.dispense(amount)
   end
 end
 
-class CashSlot
+class CashSlot # atm
   def contents
     @contents or raise("I'm empty!")
   end
 
-  def dispense(amount)
+  def dispense(amount) # bagisla
     @contents = amount
   end
 end
