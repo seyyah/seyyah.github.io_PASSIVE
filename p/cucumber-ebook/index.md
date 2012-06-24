@@ -411,7 +411,7 @@ Step,
 
 .code: code/expressive_scenarios/01/features/step_definitions/board_steps.rb 9 $
 
-TODO: cucumber çıktı
+<img src="http://i.imgur.com/7OARZ.png" height="250">
 
 ---
 
@@ -421,7 +421,7 @@ Step,
 
 .code: code/expressive_scenarios/02/features/step_definitions/board_steps.rb 9 $
 
-TODO: cucumber çıktı
+<img src="http://i.imgur.com/lUkDz.png" height="250">
 
 ---
 
@@ -431,7 +431,7 @@ Step,
 
 .code: code/expressive_scenarios/03/features/step_definitions/board_steps.rb 9 $
 
-TODO: cucumber çıktı
+<img src="http://i.imgur.com/FFKSf.png" height="250">
 
 ---
 
@@ -441,7 +441,7 @@ Step,
 
 .code: code/expressive_scenarios/04/features/step_definitions/board_steps.rb 9 $
 
-TODO: cucumber çıktı
+<img src="http://i.imgur.com/aNDMI.png" height="250">
 
 ---
 
