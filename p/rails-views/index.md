@@ -14,6 +14,34 @@ Samsun
 
 ---
 
+# Form: Formtastic
+
+Örnek çalışma,
+
+    !sh
+    $ git branch -t test
+    $ rails g model Test name:string content:text
+    $ rake db:migrate
+    $ rails generate formtastic:form Test --template-engine slim
+      create  app/views/tests
+      create  app/views/tests/_form.html.slim
+
+Form,
+
+    !slim
+    # app/views/tests/_form.html.slim
+      = semantic_form_for @test do |f|
+        = f.inputs do
+          = f.input :name
+          = f.input :content
+
+        = f.buttons do
+          = f.commit_button
+
+- [Form
+  Generator](http://rubydoc.info/github/justinfrench/formtastic/master/Formtastic/FormGenerator)
+---
+
 # Form: Design
 
 - [Best Practices for Form
