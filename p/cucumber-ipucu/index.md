@@ -67,6 +67,10 @@ Cucumber:Wiki [Tags](https://github.com/cucumber/cucumber/wiki/Tags)
 		!bash
 		$ cucumber --expand
 
+- klasör kullanımı,
+
+		!bash
+		$ cucumber features/reading_reports/widget_report.feature -r features/
 ---
 
 # Okunacaklar Listesi

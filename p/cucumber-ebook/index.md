@@ -565,3 +565,93 @@ Data Tables'ı böyle geçebiliriz, +bonus: tek step durumu
       }
     end
 
+---
+
+# 5.5 Doc Strings
+
+Feature,
+
+    !ruby
+    Scenario: Ban Unscrupulous Users
+      When I behave unscrupulously
+      Then I should receive an email containing:
+        """
+        Dear Sir,
+
+        Your account privileges have been revoked due to your unscrupulous behavior.
+        Sincerely,
+        The Management
+        """
+      And my account should be locked
+
+---
+
+# 5.6 Tags and Subfolders
+
+Features dizininde alt dizinler oluşturulabilir,
+
+    !bash
+    features/
+      admins/
+      logged_in_users/
+      report_building/
+      user_administration/
+      reading_reports/
+
+Bu alt klasörde ki features'u çalıştırmak için,
+
+    !bash
+    $ cucumber features/reading_reports/widget_report.feature
+
+step tanımlarını tek bir yerde tutacaksanız (ki tavsiye edilen budur),
+
+    !bash
+    $ cucumber features/reading_reports/widget_report.feature -r features/
+
+root klasörünü hatırlat ki `features/step_definitions/` a baksın
+
+---
+
+# Tags
+
+- Alt klasörler eğer kitabın bölümleriyse,
+
+- Tag'ler sayfalara yerleştirilen not kağıtlarıdır
+
+Test sırasında şöyle belirtilecek
+
+    !bash
+    $ cucumber --tags @javascript
+
+---
+
+# Tags: Örnekler
+
+Tag örnekleri,
+
+    !ruby
+    @widgets
+    Scenario: Generate report
+      Given I am logged in
+      And there is a report "Best selling widgets"
+
+Birden fazla tag,
+
+    !ruby
+    @slow @widgets @nightly
+    Scenario: Generate overnight report
+      Given I am logged in
+      And there is a report "Total widget sales history"
+
+Senaryo düzeyinde tag'leme,
+
+    !ruby
+    @nightly @slow
+    Feature: Nightly Reports
+      @widgets
+      Scenario: Generate overnight widgets report
+        ...
+      @doofers
+      Scenario: Generate overnight doofers report
+        ...
+
