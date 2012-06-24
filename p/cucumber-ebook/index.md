@@ -655,3 +655,268 @@ Senaryo düzeyinde tag'leme,
       Scenario: Generate overnight doofers report
         ...
 
+---
+
+# Chapter 6: When Cucumbers Go Bad
+
+Tarandı fakat not tutulmadı
+
+---
+
+# Part II - A Worked Example
+
+---
+
+# Chapter 7: Step Definitions: On the Inside
+
+
+---
+
+# Chapter 6: When Cucumbers Go Bad
+
+Tarandı fakat not tutulmadı
+
+---
+
+# Part II - A Worked Example
+
+---
+
+# Chapter 7: Step Definitions: On the Inside
+
+.code: code/step_definitions_inside/01/features/cash_withdrawal.feature
+
+**Step 1:** <font color=red>KIRMIZI</font>,
+
+.code: code/step_definitions_inside/01/features/step_definitions/steps.rb 9 11
+
+**Test Sonucu**:
+
+<img src=http://i.imgur.com/nhwxb.png height="200">
+
+**Problem**: `uninitialized constant Account (NameError)`
+
+---
+
+# 7.1 Sketching Out the Domain Model
+
+Step dosyasına **Model** bilgisini gömelim,
+
+.code: code/step_definitions_inside/02/features/step_definitions/steps.rb 9 16
+
+**Step 1:** <font color=green>YEŞİL</font>,
+
+<img src=http://i.imgur.com/JoWqT.png height="200">
+
+**Problem**: `Pending` + `amount`
+
+---
+
+# Model: attribute
+
+**Step 2:** <font color=red>KIRMIZI</font>: `amount`'u dikkate al,
+
+.code: code/step_definitions_inside/03/features/step_definitions/steps.rb 9 17
+
+**Test Sonucu**: değişmedi. İyileştirmeye devam edelim.
+
+---
+
+# Model: method
+
+**Step 2:** <font color=red>KIRMIZI</font>: `balance` yöntemi ekle + `RSpec`
+
+**Step 1:** tekrar <font color=red>KIRMIZI</font>,
+
+.code: code/step_definitions_inside/04/features/step_definitions/steps.rb 9 22
+
+<img src=http://i.imgur.com/oSD9L.png height="200">
+
+---
+
+# RSpec
+
+Kontrolde kullanılan RSpec kodları,
+
+.code: code/step_definitions_inside/04/features/step_definitions/steps.rb 19 21
+
+mealen der ki,
+
+> `balance` değişkeni (yöntem dönütü), `amount` olmalıdır (`should`)
+
+---
+
+# Model: iç değişken
+
+Model'e `@balance` iç değişkeni ekleyelim,
+
+.code: code/step_definitions_inside/05/features/step_definitions/steps.rb 9 17
+
+**Test Sonucu**:
+
+<img src=http://i.imgur.com/qBIiW.png width="700">
+
+---
+
+# 7.2 Removing Duplication with Transforms
+
+---
+
+# Transform
+
+- Tekrarlayan `to_i`'ler göz tırmalıyor
+
+- Bunun için Step tanımında `Transform` tanımlayalım,
+
+.code: code/step_definitions_inside/06/features/step_definitions/steps.rb 19 21
+
+- Artık `to_i`'siz yazabiliriz
+
+.code: code/step_definitions_inside/06/features/step_definitions/steps.rb 23 28
+
+- `Transform`, herhang bir yerde tanıma uyan düzenli ifadeyi yakalar ve çevirir
+
+---
+
+# Transform: Alias / Constant
+
+Bir sabit olarak tanımlayıpta kullanabiliriz,
+
+.code: code/step_definitions_inside/07/features/step_definitions/steps.rb 19 28
+
+`CAPTURE_A_NUMBER` yerine `CAPTURE_CASH_AMOUNT` daha iyi.
+
+---
+
+# Transforms: how do they work?
+
+<img src=http://i.imgur.com/GUh9m.png height="500">
+
+---
+
+# 7.3 Adding Custom Helper Methods
+
+En son test durumumuz,
+
+<img src=http://i.imgur.com/TVfB2.png width="700">
+
+Step en son şöyle idi,
+
+.code: code/step_definitions_inside/09/features/step_definitions/steps.rb 30 32
+
+Transform+Constant kullanarak Step'i tekrardan yazalım,
+
+.code: code/step_definitions_inside/09_10/features/step_definitions/steps.rb 30 32
+
+---
+
+# Model: Teller
+
+Banka memuru (_teller_), hesabımızdan çeksin (_withdraw_),
+
+.code: code/step_definitions_inside/10_pre/features/step_definitions/steps.rb 35 38
+
+madem _request_ yerine _withdraw_ kullanıyoruz Feature'u güncelleyelim (`I
+request` > `I withdraw`),
+
+.code: code/step_definitions_inside/10/features/cash_withdrawal.feature
+
+Bunun step'ini güncelleyelim,
+
+.code: code/step_definitions_inside/10/features/step_definitions/steps.rb 35 38
+
+---
+
+# Teller: withdrawal_from
+
+Teller için `withdrawal_from` yöntemini oluştur,
+
+.code: code/step_definitions_inside/10/features/step_definitions/steps.rb 19 22
+
+**Test Sonucu**:
+
+<img src=http://i.imgur.com/5gOqf.png width="700">
+
+**Problem**: `my_account`: step'ler arasında nasıl taşıyacağız?
+
+---
+
+# Storing State in the World
+
+instance'a dönüştrmek gerek (normal ruby davranışı),
+
+.code: code/step_definitions_inside/10_11/features/step_definitions/steps.rb 28 38
+
+**Test Sonucu**:
+
+<img src=http://i.imgur.com/or4yp.png width="700">
+
+---
+
+# Creating Custom Helper Methods
+
+`my_account`'u accessor'un arkasına gizleyerek `nil`'i önleyebiliriz,
+
+.code: code/step_definitions_inside/11/features/step_definitions/steps.rb 29 31
+
+Bir modüle dönüştürebiliriz,
+
+.code: code/step_definitions_inside/11/features/step_definitions/steps.rb 28 32
+
+Cucumber dünyasına (_World_) bunu mixed ederek söyleriz,
+
+.code: code/step_definitions_inside/11/features/step_definitions/steps.rb 34
+
+---
+
+# Creating Custom Helper Methods: Step
+
+Step'leri tekrar güncelle (`@my_account > my_account`),
+
+.code: code/step_definitions_inside/11/features/step_definitions/steps.rb 36 45
+
+---
+
+# Altın vuruş zamanı
+
+Son Step,
+
+.code: code/step_definitions_inside/11/features/step_definitions/steps.rb -3 $
+
+Önce Transform:Constant'ını devreye alalım,
+
+.code: code/step_definitions_inside/11_12/features/step_definitions/steps.rb -3 $
+
+Şöyle yazabiliriz,
+
+.code: code/step_definitions_inside/12/features/step_definitions/steps.rb -3 $
+
+---
+
+# Module: cash_slot
+
+Module'e (`module KnowsTheDomain`) `cash_slot`'u ekleyelim,
+
+.code: code/step_definitions_inside/12/features/step_definitions/steps.rb 39 41
+
+Tahmin edileceği üzere bir de bankomat sınıfı/modeli gerekiyor,
+
+.code: code/step_definitions_inside/12/features/step_definitions/steps.rb 24 28
+
+bir exception atıyor. **Test Sonucu**:
+
+<img src=http://i.imgur.com/WWKa9.png width="700">
+
+**Problem**: `I'm empty! (RuntimeError)`
+
+---
+
+# Teller: initialize + withdrawal_from
+
+Teller şöyleydi,
+
+.code: code/step_definitions_inside/12/features/step_definitions/steps.rb 19 22
+
+ihtiyacı karşılayacak biçimde geliştirelim,
+
+.code: code/step_definitions_inside/13/features/step_definitions/steps.rb 19 27

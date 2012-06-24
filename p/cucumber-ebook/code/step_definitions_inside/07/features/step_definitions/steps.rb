@@ -1,16 +1,16 @@
 #---
 # Excerpted from "The Cucumber Book",
 # published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material, 
+# Copyrights apply to this code. It may not be used to create training material,
 # courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose. 
+# We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/hwcuc for more book information.
 #---
 class Account
   def deposit(amount)
     @balance = amount
   end
-  
+
   def balance
     @balance
   end
@@ -23,7 +23,7 @@ end
 Given /^I have deposited \$(#{CAPTURE_A_NUMBER}) in my account$/ do |amount|
   my_account = Account.new
   my_account.deposit(amount)
-  my_account.balance.should eq(amount), 
+  my_account.balance.should eq(amount),
     "Expected the balance to be #{amount} but it was #{my_account.balance}"
 end
 
