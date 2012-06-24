@@ -75,4 +75,11 @@ Cucumber:Wiki [Tags](https://github.com/cucumber/cucumber/wiki/Tags)
 
 # Okunacaklar Listesi
 
+- [Cucumber Rails 0.4: The
+  De-Web-Step-ining](http://www.noelrappin.com/railsrx/2011/3/30/cucumber-rails-04-the-de-web-step-ining.html)
+
+- [UI Tests – How do we keep them from being
+  brittle?](http://www.cheezyworld.com/2010/11/09/ui-tests-not-brittle/)
+- [Tutorials and Related Blog
+  Posts](https://github.com/cucumber/cucumber/wiki/tutorials-and-related-blog-posts)
 - [15 Expert Tips for Using Cucumber](http://www.engineyard.com/blog/2009/15-expert-tips-for-using-cucumber/)
