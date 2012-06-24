@@ -509,3 +509,59 @@ Feature,
 
 # 5.4 Nesting Steps
 
+---
+
+# Nesting Steps: before
+
+Feature,
+
+.code: code/expressive_scenarios/12/features/nesting_steps_before.feature
+
+Burada şu feature tekrarlıyor,
+
+.code: code/expressive_scenarios/12/features/user_login.feature
+
+---
+
+# Nesting Steps: after
+
+Feature,
+
+.coden: code/expressive_scenarios/13/features/nesting_steps_after.feature
+
+`Given I have authenticated with the correct PIN` üst düzey adımına dikkat!
+
+Step'ler şöyle olur,
+
+.code: code/expressive_scenarios/13/features/step_definitions/user_steps.rb 1
+
+    ...
+
+.code: code/expressive_scenarios/13/features/step_definitions/user_steps.rb -7 $
+
+---
+
+# Argümanlar
+
+Step örneği 1: ruby kodu
+
+    !ruby
+    Given /^an activated customer (\w+) exists$/ do |name|
+      steps %{
+        Given I create a customer with login #{name}
+        And I register the customer with login #{name}
+        And I activate the customer with login #{name}
+      }
+    end
+
+Data Tables'ı böyle geçebiliriz, +bonus: tek step durumu
+
+    !ruby
+    Given /^a (\w+) widget with the following details:$/ do |color, details_table|
+      step "I create a #{color} widget with the following details:", details_table
+      steps %{
+        And I register the #{color} widget
+        And I activate the #{color} widget
+      }
+    end
+
