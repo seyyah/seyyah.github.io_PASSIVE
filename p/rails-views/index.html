@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta id="viewport" name="viewport" content="user-scalable=no" />
-    <title>Shell: İpucu</title>
+    <title>Rails - Views</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1595,14 +1595,14 @@ div.slide {
         <div class="slide first has_qr">
           <div class="inner">
             
-            <header><h1>Shell: İpucu</h1></header>
+            <header><h1>Rails - Views</h1></header>
             
             
             <section><p>Nurettin Şenyer <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#121;&#121;&#97;&#104;&#64;&#98;&#105;&#108;&#46;&#111;&#109;&#117;&#46;&#101;&#100;&#117;&#46;&#116;&#114;">&#115;&#101;&#121;&#121;&#97;&#104;&#64;&#98;&#105;&#108;&#46;&#111;&#109;&#117;&#46;&#101;&#100;&#117;&#46;&#116;&#114;</a></p>
 <p>http://seyyah.me</p>
 <p>Haziran, 2012</p>
 <p>Samsun</p>
-<p class="qr"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://seyyah.me/p/shell-ipucu&chf=bg,s,00000000&choe=UTF-8" alt="QR Code" /></p></section>
+<p class="qr"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://seyyah.me/p/rails-views&chf=bg,s,00000000&choe=UTF-8" alt="QR Code" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1618,7 +1618,60 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/2
+              1/4
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Form: Formtastic</h1></header>
+            
+            
+            <section><p>Örnek çalışma,</p>
+<div class="highlight"><pre><span class="nv">$ </span>git branch -t <span class="nb">test</span>
+<span class="nv">$ </span>rails g model Test name:string content:text
+<span class="nv">$ </span>rake db:migrate
+<span class="nv">$ </span>rails generate formtastic:form Test --template-engine slim
+  create  app/views/tests
+  create  app/views/tests/_form.html.slim
+</pre></div>
+
+<p>Form,</p>
+<pre><code>!slim
+# app/views/tests/_form.html.slim
+  = semantic_form_for @test do |f|
+    = f.inputs do
+      = f.input :name
+      = f.input :content
+
+    = f.buttons do
+      = f.commit_button
+</code></pre>
+<ul>
+<li><a href="http://rubydoc.info/github/justinfrench/formtastic/master/Formtastic/FormGenerator">Form
+  Generator</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/4
             </aside>
           </footer>
         </div>
@@ -1629,20 +1682,19 @@ div.slide {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Rename multiple files</h1></header>
+            <header><h1>Form: Design</h1></header>
             
             
-            <section><p>Dosya isminde bul-değiştir,</p>
-<pre><code>```sh
-for FILE in *.feature ; do
-    NEWFILE=`echo $FILE | sed 's/\.feature/_steps.rb/g'` ;
-    echo "$FILE will be renamed as $NEWFILE" ;
-    mv "$FILE" $NEWFILE ;
-done
-```
-</code></pre>
-<p>Kaynak:
-<a href="http://www.basicallytech.com/blog/?/archives/10-Shell-stuff-rename-multiple-files-on-the-command-line.html">http://www.basicallytech.com/blog/?/archives/10-Shell-stuff-rename-multiple-files-on-the-command-line.html</a></p></section>
+            <section><ul>
+<li>
+<p><a href="http://www.slideshare.net/psykoreactor/best-practices-for-form-design">Best Practices for Form
+  Design</a></p>
+</li>
+<li>
+<p><a href="http://www.slideshare.net/AaronGustafson/learning-to-love-forms-web-directions-south-07">Learning to Love
+  Forms</a></p>
+</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1658,7 +1710,40 @@ done
             </aside>
             
             <aside class="page_number">
-              2/2
+              3/4
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Genel</h1></header>
+            
+            
+            <section><ul>
+<li><a href="http://programmers.stackexchange.com/questions/46716/what-should-every-programmer-know-about-web-development">What should every programmer know about web
+  development?</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/4
             </aside>
           </footer>
         </div>
@@ -1673,14 +1758,26 @@ done
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Shell: İpucu</a></th>
+        <th><a href="#slide1">Rails - Views</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Rename multiple files</a></th>
+        <th><a href="#slide2">Form: Formtastic</a></th>
         <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Form: Design</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Genel</a></th>
+        <td><a href="#slide4">4</a></td>
       </tr>
       
       

@@ -669,21 +669,6 @@ Tarandı fakat not tutulmadı
 
 # Chapter 7: Step Definitions: On the Inside
 
-
----
-
-# Chapter 6: When Cucumbers Go Bad
-
-Tarandı fakat not tutulmadı
-
----
-
-# Part II - A Worked Example
-
----
-
-# Chapter 7: Step Definitions: On the Inside
-
 .code: code/step_definitions_inside/01/features/cash_withdrawal.feature
 
 **Step 1:** <font color=red>KIRMIZI</font>,
@@ -1022,7 +1007,60 @@ yeni hali,
 
 # Chapter 8: Support Code
 
+Önceki bölümün Automated Teller Machine (ATM) feature,
 
+.code: code/support_code/01/features/cash_withdrawal.feature
+
+---
+
+# 8.1 Fixing the Bug
+
+Kasa'dan düşen böyle sınanıyor,
+
+.code: code/support_code/01/features/step_definitions/teller_steps.rb 9 $
+
+Feature,
+
+.code: code/support_code/01/features/cash_withdrawal.feature
+
+tanımında hesabımda kalanla ilgili eksiklik var! `80$`'ımın kaldığını nasıl test
+edeceğim?
+
+.code: code/support_code/02/features/cash_withdrawal.feature 1 5
+
+.code: code/support_code/02/features/cash_withdrawal.feature 7
+
+---
+
+# Missing Senaryo
+
+Buna,
+
+.code: code/support_code/02/features/cash_withdrawal.feature 7
+
+dair adım,
+
+.code: code/support_code/02/features/step_definitions/account_steps.rb 9 $
+
+---
+
+# Gerekli adım
+
+Böyle başladık,
+
+.code: code/support_code/02/features/step_definitions/account_steps.rb -3 $
+
+şöyle yapıyoruz,
+
+.code: code/support_code/03/features/step_definitions/account_steps.rb -4 $
+
+**Test Sonucu**:
+
+![f](http://i.imgur.com/biwjU.png)
+
+**Problem**: `Expected the balance to be 80 but it was 100`
+
+---
 
 
 
