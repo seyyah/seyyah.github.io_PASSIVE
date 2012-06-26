@@ -1133,3 +1133,108 @@ Başlarken,
 **Test Sonucu**:
 
 ![f](http://i.imgur.com/WOEzq.png)
+
+---
+
+# Reviewing and Refactoring
+
+Extreme Programming Explained kitabında Kent Beck, basit tasarımla alakalı
+olarak dört kriter belirlemiştir,
+
+1. Tüm testler geçmeli
+
+2. Niyetin açık olsun
+
+3. Tekrarları önle
+
+4. En az sayıda nesne veya yöntem kullan
+
+![f](http://www.extremeprogramming.org/map/images/project.gif)
+
+---
+
+# Bizde durum nedir?
+
+1. "Tüm testler geçmeli". EVET
+
+2. "Niyetin açık olsun". Bu biraz sıkıntılı!
+
+3. ?
+
+4. ?
+
+---
+
+# XP: Niyetin açık olsun
+
+## Feature: Step 1
+
+- Feature hatırlanırsa
+
+.code: code/support_code/05/features/cash_withdrawal.feature 2
+
+- `deposit` X `withdraw` yoksa `credit` X `debit`
+
+- finansal işlemlerde `credit` (Cr) ve `debit` (Dr) kullanıldığından
+
+- `deposit -> credit` geçişi yapıyoruz
+
+- **debit card**: kişinin kendi parasıyla alış veriş yapması
+
+- **credit card**: ödünç parayla alış veriş yapması
+
+---
+
+# deposit -> credit geçişi: Model
+
+Model (önce),
+
+.code: code/support_code/05/lib/nice_bank.rb 9 12
+
+Model (sonra),
+
+.code: code/support_code/06/lib/nice_bank.rb 9 12
+
+---
+
+# deposit -> credit geçişi: Step
+
+Step (önce),
+
+.code: code/support_code/06/features/step_definitions/account_steps.rb 9 10
+
+Step (sonra),
+
+.code: code/support_code/07/features/step_definitions/account_steps.rb 9 10
+
+---
+
+# Feature: Step 2
+
+Feature (önce),
+
+.code: code/support_code/07/features/cash_withdrawal.feature 3
+
+Feature (sonra),
+
+.code: code/support_code/08/features/cash_withdrawal.feature 3
+
+Buna dair Step (önce),
+
+.code: code/support_code/06/features/step_definitions/account_steps.rb 9 10
+
+Step (sonra),
+
+.code: code/support_code/08/features/step_definitions/account_steps.rb 9 10
+
+---
+
+# XP: "Tekrarları önle"
+
+Bu iki adım,
+
+.code: code/support_code/08/features/step_definitions/account_steps.rb 9 $
+
+Evet... kod tekrarı içeriyor fakat zaten ilk adım, görevi olmayan işe girişmiş,
+
+.code: code/support_code/09/features/step_definitions/account_steps.rb 9 $
