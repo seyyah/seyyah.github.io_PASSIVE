@@ -1238,3 +1238,168 @@ Bu iki adım,
 Evet... kod tekrarı içeriyor fakat zaten ilk adım, görevi olmayan işe girişmiş,
 
 .code: code/support_code/09/features/step_definitions/account_steps.rb 9 $
+
+---
+
+# 8.2 Bootstrapping the User Interface
+
+- Sinatra ve Capybara
+
+- TODO: 141-142 sayfalarında Sinatra nasıl?
+
+---
+
+# What skills do you need to write tests?
+
+<img src=http://i.imgur.com/Q1KxX.png height=550>
+
+---
+
+# 8.3 Making the Switch
+
+Amacımız,
+
+<img src=http://i.imgur.com/xyEaO.png height=550>
+
+---
+
+# world_extensions ui
+
+Peki nasıl? İlgili step'te teller (kasiyer)'in hesaptan nasıl düşeceğini
+bilmiyoruz,
+
+.code: code/support_code/11/features/step_definitions/teller_steps.rb 9 11
+
+Bunun UI ile yaptıracağız. world_extensions (önce),
+
+.code: code/support_code/11/features/support/world_extensions.rb 9 12
+
+world_extensions (sonra),
+
+.code: code/support_code/12/features/support/world_extensions.rb 9 17
+
+---
+
+# world_extensions ui: test
+
+**Test Sonucu**:
+
+![f](http://i.imgur.com/VVH9O.png)
+
+Neden? İlgili Step,
+
+.code: code/support_code/12/features/step_definitions/cash_slot_steps.rb 9 11
+
+burada `cash_slot`, CashSlot türünden,
+
+.code: code/support_code/12/features/support/world_extensions.rb 19 21
+
+---
+
+# cash_slot
+
+Bu ise bir önceki adımda,
+
+.code: code/support_code/12/features/step_definitions/teller_steps.rb 9 11
+
+teller üzerinden,
+
+.code: code/support_code/12/features/support/world_extensions.rb 23 25
+
+`UserInterface` sınıfı/modelinin `withdrawal_from` işlevi,
+
+.code: code/support_code/12/features/support/world_extensions.rb 9 13
+
+Yani, hiç bir şey yapmıyor!
+
+---
+
+# UI: withdrawal_from
+
+UI:withdrawal_from (önce),
+
+.code: code/support_code/12/features/support/world_extensions.rb 9 13
+
+withdrawal_from (sonra,
+
+.code: code/support_code/13/features/support/world_extensions.rb 9 19
+
+---
+
+# UI: view
+
+**Test Sonucu**:
+
+![f](http://i.imgur.com/6iB5X.png)
+
+Fill edilecek bir şey yok. UI:view, böyle bir şey olmalı,
+
+![f](http://i.imgur.com/VbeTv.png)
+
+---
+
+# Hooks
+
+Senaryonun başında ve sonunda bir şeyler yapmak istersek: `hooks`
+
+    !ruby
+    # features/support/hooks.rb
+    Before do
+      puts "Go!"
+    end
+
+    After do
+      puts "Stop!"
+    end
+
+Bu haliyle global'dir, belli tag'ler için özelleştirebilirsiniz,
+
+    !ruby
+    # foo.feature
+    ...
+    @admin
+    Feature: Delete Widgets
+      ...
+
+    # hooks.rb
+    Before('@admin') do
+      user = create_user(:admin => true)
+      login_as user
+    end
+
+---
+
+# Hooks: scenario, around
+
+Examining the Scenario,
+
+    !ruby
+    Before do |scenario|
+      puts "Starting scenario #{scenario.name}"
+    end
+
+    After do |scenario|
+      puts "Oh dear" if scenario.failed?
+    end
+
+Around Hooks,
+
+    !ruby
+    Around do |scenario, block|
+      puts "About to run #{scenario.name}"
+      block.call
+      puts "Finished running #{scenario.name}"
+    end
+
+    Around('@run_with_and_without_javascript') do |scenario, block|
+      Capybara.current_driver = Capybara.javascript_driver
+      block.call
+      Capybara.use_default_driver
+      block.call
+    end
+
+---
+
+# Building the User Interface
+
+
