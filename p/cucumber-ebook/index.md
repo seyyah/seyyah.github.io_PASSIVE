@@ -1062,5 +1062,74 @@ Böyle başladık,
 
 ---
 
+# Modeli güncelle
 
+Modelimiz şöyleydi,
 
+.code: code/support_code/03/lib/nice_bank.rb 19 26
+
+şöyle güncelliyoruz,
+
+.code: code/support_code/04/lib/nice_bank.rb 19 27
+
+burada kritik satır: `account.debit(amount)`
+
+---
+
+# debit
+
+**Test Sonucu**:
+
+![f](http://i.imgur.com/LOlRc.png)
+
+Kritik satır: `undefined method `debit' for #<Account ...>`. Bu satırı
+tetikleyen feature satırı,
+
+.code: code/support_code/04/features/cash_withdrawal.feature 4
+
+buna ait step,
+
+.code: code/support_code/04/features/step_definitions/teller_steps.rb 9 $
+
+burada `my_account`,
+
+.code: code/support_code/04/features/support/world_extensions.rb 10 12
+
+---
+
+# Account modeli: debit
+
+dolayısıyla `my_account`, Account instance'ıdır.
+
+.code: code/support_code/04/features/step_definitions/teller_steps.rb 10
+
+ve `teller`'da bir Teller instance'ı olduğundan, `withdrawal_from` işlevinde,
+
+.code: code/support_code/04/lib/nice_bank.rb 23 26
+
+`account.debit` çağrısı Account modelinde `debit` (deftere kaydedilen borç)
+yöntemini arar. Bulamayınca: `undefined method 'debit' for #<Account ...>`
+
+Ki `Account` modeli,
+
+.code: code/support_code/04/lib/nice_bank.rb 9 17
+
+---
+
+# Account modeli: debit: eklentisi
+
+Başlarken,
+
+.code: code/support_code/04/lib/nice_bank.rb 9 17
+
+`debit`'le,
+
+.code: code/support_code/05/lib/nice_bank.rb 9 19
+
+---
+
+# Tümü yeşillendi
+
+**Test Sonucu**:
+
+![f](http://i.imgur.com/WOEzq.png)
