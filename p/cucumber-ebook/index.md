@@ -1470,3 +1470,31 @@ Gemfile'ını düzenle,
 
 .code: code/rails/01/Gemfile
 
+---
+
+# Cucumber
+
+ilk adımlar,
+
+    !bash
+    $ cd squeaker
+    $ rails generate cucumber:install
+
+Generator'ün oluşturduğu üç kritik dosya var,
+
+- `config/cucumber.yml`: profiller burada. Öntanımlı olarak: `default, wip,
+  rerun` geliyor. Ayrıntı için: "11.6 Using Profiles"
+
+- `features/support/env.rb`: testler başladığında **önce** bu çalıştırılır.
+  Rails ortamını, gereksinimleri (Cucumber, Capybara kitaplıkları vs) yükler.
+
+- `lib/tasks/cucumber.rake`: Rake görevleri. `$ rake -T cucumber`
+
+---
+
+# Feature
+
+Feature,
+
+.code: code/rails/01/features/see_messages.feature
+
