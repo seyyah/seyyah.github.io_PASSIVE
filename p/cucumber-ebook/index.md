@@ -1649,6 +1649,73 @@ Generator'ün oluşturduğu üç kritik dosya var,
 
 ---
 
-# Step 3: Controller
+# Step 3: Route + Controller
 
+- Router'u tanımla,
+
+.code: code/rails/09-a-route/config/routes.rb -3 $
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/TwVN4.png)
+
+- Controller'u ayarla,
+
+.code: code/rails/09-b-controller/app/controllers/users_controller.rb -4 $
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/TSvay.png)
+
+---
+
+# Step 3: + View
+
+- View'i ayarla,
+
+.code: code/rails/10/app/views/users/show.html.erb 1
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/NiGOS.png)
+
+- STEP 3: YEŞİL (ama geri dönmemiz gerekecek)
+
+- STEP 4: SARI/UNDEFINED
+
+---
+
+# Step 4: Implementing the View
+
+- View: Adım tanımını oluşturalım,
+
+.code: code/rails/10-a-step-definition/features/step_definitions/view_steps.rb -3 $
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/Pq1py.png)
+
+- View,
+
+.code: code/rails/10-b-view/app/views/users/show.html.erb
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/GPWvn.png)
+
+---
+
+# Step 4: + controller + relationship
+
+- Controller,
+
+.code: code/rails/11/app/controllers/users_controller.rb -5 $
+
+- Model,
+
+.code: code/rails/11/app/models/user.rb -3 $
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/kgGiM.png)
 
