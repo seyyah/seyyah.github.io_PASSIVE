@@ -1483,18 +1483,172 @@ ilk adımlar,
 Generator'ün oluşturduğu üç kritik dosya var,
 
 - `config/cucumber.yml`: profiller burada. Öntanımlı olarak: `default, wip,
-  rerun` geliyor. Ayrıntı için: "11.6 Using Profiles"
+  rerun` geliyor. Bkz: "11.6 Using Profiles",
+  <https://github.com/cucumber/cucumber/wiki/cucumber.yml>
 
 - `features/support/env.rb`: testler başladığında **önce** bu çalıştırılır.
   Rails ortamını, gereksinimleri (Cucumber, Capybara kitaplıkları vs) yükler.
 
-- `lib/tasks/cucumber.rake`: Rake görevleri. `$ rake -T cucumber`
+- `lib/tasks/cucumber.rake`: Rake görevleri. `$ rake -T cucumber`. Bkz: "11.7
+  Running Cucumber from Rake",
+  <https://github.com/cucumber/cucumber/wiki/Using-Rake>
 
 ---
 
 # Feature
 
-Feature,
+- Feature,
 
 .code: code/rails/01/features/see_messages.feature
+
+- İlk adım,
+
+.code: code/rails/01/features/see_messages.feature 3
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/n9YkV.png)
+
+- User oluşturmalıyız.
+
+---
+
+# Step 1: Creating a User
+
+- FactoryGirl'ü kullanacağız (sign-up vs girmiyoruz),
+
+.code: code/rails/02/Gemfile 15 $
+
+.notes: FactoryGirl ise rails uygulamaları için `factory_girl_rails`'i öneriyor.
+
+- Adım tanımını oluşturalım,
+
+.code: code/rails/02/features/step_definitions/user_steps.rb -3 $
+
+.notes: burada `Factory(:user)`, `Factory.create(:user)` kısaltmasıdır. Bunu kullanın.
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/K35V6.png)
+
+---
+
+# Step 1: FactoryGirl
+
+- FactoryGirl
+
+.code: code/rails/03/features/support/factories.rb 9 $
+
+.notes: her bir factory tanımı ayrı dosyada ve `test/factories/*.rb` olarak tutuluyor.
+
+.notes: Cucumber'in FactoryGirl'ü görebilmesi için, `features/support/env.rb`'de `require 'factory_girl'` yeterli!
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/JFUx8.png)
+
+---
+
+# Step 1: Model
+
+- `User` modeli,
+
+        !bash
+        $ rails generate model User username:string
+
+- migrate + prepares,
+
+        !bash
+        $ rake db:migrate db:test:prepare
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/IIKpk.png)
+
+- Step 1: YEŞİL
+
+- Step 2: SARI/UNDEFINED
+
+---
+
+# Step 2: Posting a Message
+
+- İlgili Feature girdisi,
+
+.code: code/rails/05/features/see_messages.feature 4
+
+- Adım tanımını oluşturalım,
+
+.code: code/rails/05/features/step_definitions/user_steps.rb -4 $
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/DeLXP.png)
+
+---
+
+# Step 2: FactoryGirl
+
+- FactoryGirl,
+
+.code: code/rails/06/features/support/factories.rb 16 19
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/BTsjC.png)
+
+---
+
+# Step 2: Model
+
+- `Message` modeli,
+
+        !bash
+        $ rails g model Message user_id:integer content:string
+
+- migrate + prepares,
+
+        !bash
+        $ rake db:migrate db:test:prepare
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/b38gU.png)
+
+---
+
+# Step 2: Association
+
+- Model'de user - message ilişkisini kur,
+
+.code: code/rails/08/app/models/message.rb -3 $
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/9bpwQ.png)
+
+- STEP 2: YEŞİL
+
+- STEP 3: SARI/UNDEFINED
+
+---
+
+# Step 3: Visit
+
+- İlgili Feature girdisi,
+
+.code: code/rails/09/features/see_messages.feature 5
+
+- Adım tanımını oluşturalım,
+
+.code: code/rails/09/features/step_definitions/user_steps.rb -4 $
+
+- **Test** edelim: `$ cucumber`
+
+![f](http://i.imgur.com/MhHVc.png)
+
+---
+
+# Step 3: Controller
+
 
