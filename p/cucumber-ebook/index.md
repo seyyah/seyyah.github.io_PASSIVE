@@ -1717,5 +1717,22 @@ Generator'ün oluşturduğu üç kritik dosya var,
 
 - **Test** edelim: `$ cucumber`
 
-![f](http://i.imgur.com/kgGiM.png)
+![f](http://i.imgur.com/tARmE.png)
 
+- Tümü: YEŞİL
+
+---
+
+# Chapter 15: Using Capybara to Test Ajax Web Applications
+
+TODO: 245-274
+
+---
+
+# Chapter 16: Testing Command-Line Applications with Aruba
+
+TODO: 275-292
+
+---
+
+# SON
