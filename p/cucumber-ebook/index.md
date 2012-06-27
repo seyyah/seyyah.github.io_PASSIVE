@@ -1402,4 +1402,71 @@ Around Hooks,
 
 # Building the User Interface
 
+Önce debugging kodu eklemekle başla,
+
+.code: code/support_code/14/features/support/debugging.rb -3 $
+
+Burada kritik gem `launchy`, hata durumunda browser açılır. Gemfile'ı ayarla,
+
+.code: code/support_code/14/Gemfile
+
+TODO: sayfa 150-156
+
+---
+
+# Chapter 9: Message Queues and Asynchronous Components
+
+TODO: sayfa 157-172
+
+---
+
+# Chapter 10: Databases
+
+TODO: sayfa 173-190
+
+---
+
+# Chapter 11: The Cucumber Command-Line Interface
+
+TODO: 191-200
+
+---
+
+# Chapter 12: Testing a REST Web Service
+
+TODO: 201-220
+
+---
+
+# Chapter 13: Adding Tests to a Legacy Application
+
+TODO: 221-228
+
+---
+
+# Chapter 14: Bootstrapping Rails
+
+Hikaye/senaryo şöyle başlar,
+
+> I’ve got an amazing idea! We’re going to build a blogging platform, a micro-
+> blogging platform. It’s like blogging, right, but your messages are limited to
+> 140 characters. So, you could send them from a phone even! This is going to
+> change the world! We’re going to call it...Squeaker.
+
+İlk feature yazılır,
+
+.code: code/rails/01/features/see_messages.feature
+
+---
+
+# Rails
+
+Rails uygulamanı oluştur,
+
+    !bash
+    $ rails new squeaker --skip-test-unit
+
+Gemfile'ını düzenle,
+
+.code: code/rails/01/Gemfile
 
