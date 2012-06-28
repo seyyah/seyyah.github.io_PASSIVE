@@ -35,12 +35,14 @@ Genel olarak,
 
 # Gherkin: Cümleler
 
-Given I visit "sigin" page
-And I fill in "<attribute>" with "<value>"
-When I press "<action>"
-Then I visit "institutions" page
-And I should <result>
+örnekler,
 
-Examples:
-  | attribute | value | action | result    |
-  | name      | OMÜ   | Create | see "OMÜ" |
+	Given I visit "sigin" page
+	And I fill in "<attribute>" with "<value>"
+	When I press "<action>"
+	Then I visit "institutions" page
+	And I should <result>
+
+	Examples:
+	| attribute | value | action | result    |
+	| name      | OMÜ   | Create | see "OMÜ" |
