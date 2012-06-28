@@ -16,7 +16,7 @@ Samsun
 
 # Tags
 
-Yeni bir tag oluştururken, 
+Yeni bir tag oluştururken,
 
 	!bash
 	$ git tag -a v1.4 -m "version 1.4"
@@ -43,3 +43,19 @@ Tag leri paylaşmak,
 	$ git push --tags
 
 Kaynak: <http://learn.github.com/p/tagging.html>
+
+---
+
+# Checkout
+
+Dal ismi olmaksızın,
+
+	!bash
+	$ git log
+	67278c7f5f3a3b009a1474ca201f2b52f7728262 bla bla
+	$ git checkout 67278c7f5f3a3b009a1474ca201f2b52f7728262
+	$ git branch
+	$ git checkout -b v1.0-ustad
+	$ git branch
+
+Kaynak: [GETTING OLD VERSIONS](http://gitimmersion.com/lab_12.html)
