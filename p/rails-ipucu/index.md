@@ -13,6 +13,14 @@ Samsun
 .qr: 150|http://seyyah.me/p/rails-ipucu
 
 ---
+# UTF-8
+
+controller vs sayfalarında utf-8 desteği için,
+
+	!ruby
+	# encoding: utf-8
+
+---
 
 # Generator: Scaffold: only view
 
