@@ -20,3 +20,29 @@ Samsun
 Application Healthy (2010)](#), sayfa 235
 
 ---
+
+# Gherkin
+
+Genel olarak,
+
+	!ruby
+	Scenario
+	  Given _context_
+	  When  _interact_
+	  Then  _outcome_
+
+---
+
+# Gherkin: Cümleler
+
+örnekler,
+
+	Given I visit "sigin" page
+	And I fill in "<attribute>" with "<value>"
+	When I press "<action>"
+	Then I visit "institutions" page
+	And I should <result>
+
+	Examples:
+	| attribute | value | action | result    |
+	| name      | OMÜ   | Create | see "OMÜ" |
