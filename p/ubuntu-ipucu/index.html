@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta id="viewport" name="viewport" content="user-scalable=no" />
-    <title>Rails: İpucu</title>
+    <title>Ubuntu: İpucu</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1595,14 +1595,14 @@ div.slide {
         <div class="slide first has_qr">
           <div class="inner">
             
-            <header><h1>Rails: İpucu</h1></header>
+            <header><h1>Ubuntu: İpucu</h1></header>
             
             
             <section><p>Nurettin Şenyer <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#121;&#121;&#97;&#104;&#64;&#98;&#105;&#108;&#46;&#111;&#109;&#117;&#46;&#101;&#100;&#117;&#46;&#116;&#114;">&#115;&#101;&#121;&#121;&#97;&#104;&#64;&#98;&#105;&#108;&#46;&#111;&#109;&#117;&#46;&#101;&#100;&#117;&#46;&#116;&#114;</a></p>
 <p>http://seyyah.me</p>
 <p>Haziran, 2012</p>
 <p>Samsun</p>
-<p class="qr"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://seyyah.me/p/rails-ipucu&chf=bg,s,00000000&choe=UTF-8" alt="QR Code" /></p></section>
+<p class="qr"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://seyyah.me/p/ubuntu-ipucu&chf=bg,s,00000000&choe=UTF-8" alt="QR Code" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1618,7 +1618,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/6
+              1/2
             </aside>
           </footer>
         </div>
@@ -1629,11 +1629,11 @@ div.slide {
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>UTF-8</h1></header>
+            <header><h1>MPEG4, MP3, AAC Codec</h1></header>
             
             
-            <section><p>controller vs sayfalarında utf-8 desteği için,</p>
-<div class="highlight"><pre><span class="c1"># encoding: utf-8</span>
+            <section><p>Ubuntu Precise Pangolin 12.04 LTS and Ubuntu Oneiric Ocelot 11.10,</p>
+<div class="highlight"><pre>sudo apt-get install ffmpeg libavcodec-extra-53
 </pre></div>
 </section>
             
@@ -1651,159 +1651,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              2/6
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Generator: Scaffold: only view</h1></header>
-            
-            
-            <section><p>Evet sadece view üretmek istersek,</p>
-<div class="highlight"><pre><span class="nv">$ </span>rails generate scaffold Institution --migration<span class="o">=</span><span class="nb">false</span> --skip
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              3/6
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Exception: ActiveRecord</h1></header>
-            
-            
-            <section><h2>::MultiparameterAssignmentErrors</h2>
-<p>Örnek</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">foo</span>
-  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-<span class="k">rescue</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">MultiparameterAssignmentErrors</span>
-  <span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Error: Collection of errors that occurred</span>
-<span class="s2">           during a mass assignment using the attributes= method.&quot;</span>
-  <span class="n">redirect_to</span> <span class="n">home_path</span>
-<span class="k">end</span>
-</pre></div>
-
-<p>Kaynak</p>
-<ul>
-<li>http://api.rubyonrails.org/classes/ActiveRecord/Base.html</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              4/6
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Rake</h1></header>
-            
-            
-            <section><p>İpuçları,</p>
-<div class="highlight"><pre><span class="nv">$ </span>rake -T
-<span class="nv">$ </span>rake routes
-<span class="nv">$ </span>rake db:drop
-<span class="nv">$ </span>rake db:create
-<span class="nv">$ </span>rake db:migrate
-<span class="nv">$ </span>rake db:seed
-<span class="nv">$ </span>rake db:setup     <span class="c"># create + load:schema + seed</span>
-<span class="nv">$ </span>rake db:reset     <span class="c"># drop + setup</span>
-<span class="nv">$ </span>rake db:test:prepare
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              5/6
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Heroku</h1></header>
-            
-            
-            <section><p>Başlarken</p>
-<div class="highlight"><pre><span class="c1"># config/environments/production.rb</span>
-<span class="n">config</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">compile</span> <span class="o">=</span> <span class="kp">true</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              6/6
+              2/2
             </aside>
           </footer>
         </div>
@@ -1818,38 +1666,14 @@ div.slide {
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Rails: İpucu</a></th>
+        <th><a href="#slide1">Ubuntu: İpucu</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">UTF-8</a></th>
+        <th><a href="#slide2">MPEG4, MP3, AAC Codec</a></th>
         <td><a href="#slide2">2</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-3">
-        <th><a href="#slide3">Generator: Scaffold: only view</a></th>
-        <td><a href="#slide3">3</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-4">
-        <th><a href="#slide4">Exception: ActiveRecord</a></th>
-        <td><a href="#slide4">4</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-5">
-        <th><a href="#slide5">Rake</a></th>
-        <td><a href="#slide5">5</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-6">
-        <th><a href="#slide6">Heroku</a></th>
-        <td><a href="#slide6">6</a></td>
       </tr>
       
       

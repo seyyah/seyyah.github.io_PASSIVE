@@ -1618,7 +1618,52 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/1
+              1/2
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Rsync</h1></header>
+            
+            
+            <section><p>A makinesine <code>a_klasor</code>'ünü B makinesinde senkronlamak (tek taraflı)</p>
+<div class="highlight"><pre><span class="c"># Makine A</span>
+<span class="nv">$ </span>rsync -vauz -delete -rsh<span class="o">=</span>ssh -stats a_klasor
+  seyyah@example.com:/home/seyyah/b_klasor
+</pre></div>
+
+<ul>
+<li>
+<p>bu kod A makinesinde yer alan <code>a_klasor</code>'ünü,</p>
+</li>
+<li>
+<p>B makinesinde <code>b_klasor</code>'ü olarak rsync eder</p>
+</li>
+</ul>
+<p>Kaynak:
+<a href="http://www.arsgeek.com/2006/10/20/quicktips-how-to-rsync-files-and-folders-to-remote-machines-using-ssh/">http://www.arsgeek.com/2006/10/20/quicktips-how-to-rsync-files-and-folders-to-remote-machines-using-ssh/</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/2
             </aside>
           </footer>
         </div>
@@ -1635,6 +1680,12 @@ div.slide {
       <tr id="toc-row-1">
         <th><a href="#slide1">Linux: İpucu</a></th>
         <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Rsync</a></th>
+        <td><a href="#slide2">2</a></td>
       </tr>
       
       

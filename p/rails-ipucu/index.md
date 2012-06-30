@@ -66,3 +66,31 @@ Kaynak
 	$ rake db:reset 	# drop + setup
 	$ rake db:test:prepare
 
+---
+
+# Heroku
+
+Başlarken
+
+    sudo gem install heroku
+    heroku keys:add ~/.ssh/id_dsa.pub
+
+Depoda tek dal durumu,
+
+    heroku create --stack cedar
+    git push heroku master
+    heroku run rake db:migrate
+
+Birden fazla dal durumu,
+
+    heroku create APP_NAME --stack cedar --remote heroku_XX
+    git push heroku_XX dal_XX:master
+    heroku run rake db:migrate --app APP_NAME
+    heroku logs --app APP_NAME
+
+precompile,
+
+    !ruby
+    # config/environments/production.rb
+    config.assets.compile = true
+
