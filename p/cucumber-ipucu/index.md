@@ -14,6 +14,19 @@ Samsun
 
 ---
 
+# Reusable step definitions + i18n
+
+* http://github.com/nando/mundo-pepino
+* http://github.com/dancroak/blitz
+* http://github.com/demetriusnunes/swinger
+* http://github.com/richdownie/watircuke
+* http://github.com/napcs/cucumber_watir
+* http://github.com/mdoel/cukesteps
+* http://github.com/danielwanja/cucumberwithflex
+* http://github.com/fmiopensource/couchdb-cucumber
+
+---
+
 # Tags
 
 Bazı komut örnekleri,
