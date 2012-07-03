@@ -59,3 +59,23 @@ Dal ismi olmaksızın,
 	$ git branch
 
 Kaynak: [GETTING OLD VERSIONS](http://gitimmersion.com/lab_12.html)
+
+---
+
+# Github
+
+Commit mesajıyla issues'u kapatmak: 123 issues'u kapat,
+
+	!bash
+	# commit mesajında
+	foo bar. Close #123
+
+---
+
+# Etc
+
+Kısa kısa,
+
+	!bash
+	$ git diff --cached
+

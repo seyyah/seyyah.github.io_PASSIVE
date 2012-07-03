@@ -1629,15 +1629,19 @@ div.slide {
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Sqlite3</h1></header>
+            <header><h1>Bağımlılık</h1></header>
             
             
             <section><p><code>sqlite3</code> kurulumu öncesinde,</p>
-<div class="highlight"><pre><span class="nv">$ </span>apt-get install libsqlite3-dev
+<div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install libsqlite3-dev
 </pre></div>
 
 <p><code>pg</code> için,</p>
-<div class="highlight"><pre><span class="nv">$ </span>apt-get install libpq-dev
+<div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install libpq-dev
+</pre></div>
+
+<p><code>ckeditor</code> için,</p>
+<div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install imagemagick
 </pre></div>
 </section>
             
@@ -1674,7 +1678,8 @@ div.slide {
     gem 'sqlite3'
   end</p>
 <p>group :production do
-    gem 'pg', '0.12.2'
+    gem 'pg'
+    gem 'activerecord-postgresql-adapter'
   end</p></section>
             
           </div>
@@ -1712,7 +1717,7 @@ div.slide {
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Sqlite3</a></th>
+        <th><a href="#slide2">Bağımlılık</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
