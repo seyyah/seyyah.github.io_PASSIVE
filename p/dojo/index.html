@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta id="viewport" name="viewport" content="user-scalable=no" />
-    <title>Git: İpucu</title>
+    <title>Dojotoolkit</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1595,14 +1595,14 @@ div.slide {
         <div class="slide first has_qr">
           <div class="inner">
             
-            <header><h1>Git: İpucu</h1></header>
+            <header><h1>Dojotoolkit</h1></header>
             
             
             <section><p>Nurettin Şenyer <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#121;&#121;&#97;&#104;&#64;&#98;&#105;&#108;&#46;&#111;&#109;&#117;&#46;&#101;&#100;&#117;&#46;&#116;&#114;">&#115;&#101;&#121;&#121;&#97;&#104;&#64;&#98;&#105;&#108;&#46;&#111;&#109;&#117;&#46;&#101;&#100;&#117;&#46;&#116;&#114;</a></p>
 <p>http://seyyah.me</p>
 <p>Haziran, 2012</p>
 <p>Samsun</p>
-<p class="qr"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://seyyah.me/p/git-ipucu&chf=bg,s,00000000&choe=UTF-8" alt="QR Code" /></p></section>
+<p class="qr"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://seyyah.me/p/dojo&chf=bg,s,00000000&choe=UTF-8" alt="QR Code" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1618,7 +1618,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/6
+              1/2
             </aside>
           </footer>
         </div>
@@ -1626,35 +1626,56 @@ div.slide {
       
       <!-- slide source: ./index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>Tags</h1></header>
+            <header><h1>Kaynaklar</h1></header>
             
             
-            <section><p>Yeni bir tag oluştururken,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git tag -a v1.4 -m <span class="s2">&quot;version 1.4&quot;</span>
-<span class="nv">$ </span>git log
-67278c7f5f3a3b009a1474ca201f2b52f7728262 bla bla
-<span class="nv">$ </span>git tag -a v1.0-ustad -m <span class="s2">&quot;version 1.4&quot;</span> 67278c7f5f3a3b009a1474ca201f2b52f7728262
-</pre></div>
-
-<p>Tag leri listelerken,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git tag
-<span class="nv">$ </span>git tag -l v1.*
-v1.1
-v1.2
-</pre></div>
-
-<p>Tag i göstermek,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git show v1.4
-</pre></div>
-
-<p>Tag leri paylaşmak,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git push --tags
-</pre></div>
-
-<p>Kaynak: <a href="http://learn.github.com/p/tagging.html">http://learn.github.com/p/tagging.html</a></p></section>
+            <section><ul>
+<li><a href="http://blog.markwatson.com/2007/01/using-dojo-javascript-library-in-ruby.html">Using the Dojo Javascript library in Ruby
+Rails</a></li>
+</ul>
+<blockquote>
+<p>Dojo is definitely "heavier weight" than the prototype.js Javascript library
+that is provided with Rails so you may not want to use Dojo for very high
+traffic sites.</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/newfront/hacker-dojo-rails3-code-base">hacker-dojo-rails3-code-base</a></li>
+</ul>
+<blockquote>
+<p>This is the sample code repository for the November 2010 Hacker Dojo Rails 3
+with Ruby Hands On Programming Class.</p>
+</blockquote>
+<ul>
+<li><a href="http://dojo-pkg.rubyforge.org/">Dojo Packager ‘dojo-pkg’</a></li>
+</ul>
+<blockquote>
+<p>dojo-pkg is a Ruby gem for distributing the Dojo source code and provides
+utilities for working with Dojo in your Rails application.</p>
+</blockquote>
+<ul>
+<li><a href="http://ajaxodyssey.wordpress.com/2010/07/27/building-dojo/">Building Dojo</a>,
+<a href="http://ajaxodyssey.wordpress.com/2010/07/12/and-dojo-button-in-rails/">And Dojo button in
+Rails…</a></li>
+</ul>
+<blockquote>
+<p>Continuing from the previous post, we’ll exercise Dojo button in Rails
+environment without and with Ajax.</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/foobarfighter/drails">drails: A Dojo implementation for the Rails
+helpers</a></li>
+</ul>
+<blockquote>
+<p>drails allows you to use RJS with Dojo in your Rails application.
+It
+completely replaces the need for Prototype/Scriptaculous in your
+application
+and let's you use the powerful Dojo Toolkit as your Javascript
+library.</p>
+</blockquote></section>
             
           </div>
           <div class="presenter_notes">
@@ -1670,154 +1691,7 @@ v1.2
             </aside>
             
             <aside class="page_number">
-              2/6
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Checkout</h1></header>
-            
-            
-            <section><p>Dal ismi olmaksızın,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git log
-67278c7f5f3a3b009a1474ca201f2b52f7728262 bla bla
-<span class="nv">$ </span>git checkout 67278c7f5f3a3b009a1474ca201f2b52f7728262
-<span class="nv">$ </span>git branch
-<span class="nv">$ </span>git checkout -b v1.0-ustad
-<span class="nv">$ </span>git branch
-</pre></div>
-
-<p>Kaynak: <a href="http://gitimmersion.com/lab_12.html">GETTING OLD VERSIONS</a></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              3/6
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Github</h1></header>
-            
-            
-            <section><p>Commit mesajıyla issues'u kapatmak: 123 issues'u kapat,</p>
-<div class="highlight"><pre><span class="c"># commit mesajında</span>
-foo bar. Close <span class="c">#123</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              4/6
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Branch Rename</h1></header>
-            
-            
-            <section><p>Senaryo: <code>old</code> dalını <code>new</code> olarak yerelde ve uzakta isimlendirmek.</p>
-<p>Komutlar, yerel için,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git branch -m old new
-</pre></div>
-
-<p>uzağı da çözelim,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git push origin :old
-<span class="nv">$ </span>git push origin new:ref/heads/new
-</pre></div>
-
-<p><strong>Not</strong>: silinecek uzak dal, github'da <em>default branch</em> olmamalı!</p>
-<p>Kaynaklar: <a href="http://www.dmo.ca/blog/20080307124544/">http://www.dmo.ca/blog/20080307124544/</a></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              5/6
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Etc</h1></header>
-            
-            
-            <section><p>Kısa kısa,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git diff --cached
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              6/6
+              2/2
             </aside>
           </footer>
         </div>
@@ -1832,38 +1706,14 @@ foo bar. Close <span class="c">#123</span>
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Git: İpucu</a></th>
+        <th><a href="#slide1">Dojotoolkit</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Tags</a></th>
+        <th><a href="#slide2">Kaynaklar</a></th>
         <td><a href="#slide2">2</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-3">
-        <th><a href="#slide3">Checkout</a></th>
-        <td><a href="#slide3">3</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-4">
-        <th><a href="#slide4">Github</a></th>
-        <td><a href="#slide4">4</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-5">
-        <th><a href="#slide5">Branch Rename</a></th>
-        <td><a href="#slide5">5</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-6">
-        <th><a href="#slide6">Etc</a></th>
-        <td><a href="#slide6">6</a></td>
       </tr>
       
       

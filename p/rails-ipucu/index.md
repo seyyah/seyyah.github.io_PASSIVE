@@ -13,6 +13,17 @@ Samsun
 .qr: 150|http://seyyah.me/p/rails-ipucu
 
 ---
+
+# rails new
+
+Amacım mysql ile başlamak ve test-unit'lerini atlamak
+
+    !bash
+    $ rails help new
+    $ rails new Edessa --skip-test-unit --database=mysql
+
+---
+
 # UTF-8
 
 controller vs sayfalarında utf-8 desteği için,
@@ -75,6 +86,11 @@ Authentication,
 
     !ruby
     > User.last.authenticate('secret')
+
+Environment bilgisi,
+
+    !bash
+    $ rails console production
 
 ---
 

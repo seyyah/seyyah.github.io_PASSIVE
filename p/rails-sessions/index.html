@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta id="viewport" name="viewport" content="user-scalable=no" />
-    <title>Git: İpucu</title>
+    <title>Rails: Sessions &amp; Cookies</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1595,14 +1595,14 @@ div.slide {
         <div class="slide first has_qr">
           <div class="inner">
             
-            <header><h1>Git: İpucu</h1></header>
+            <header><h1>Rails: Sessions &amp; Cookies</h1></header>
             
             
             <section><p>Nurettin Şenyer <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#121;&#121;&#97;&#104;&#64;&#98;&#105;&#108;&#46;&#111;&#109;&#117;&#46;&#101;&#100;&#117;&#46;&#116;&#114;">&#115;&#101;&#121;&#121;&#97;&#104;&#64;&#98;&#105;&#108;&#46;&#111;&#109;&#117;&#46;&#101;&#100;&#117;&#46;&#116;&#114;</a></p>
 <p>http://seyyah.me</p>
 <p>Haziran, 2012</p>
 <p>Samsun</p>
-<p class="qr"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://seyyah.me/p/git-ipucu&chf=bg,s,00000000&choe=UTF-8" alt="QR Code" /></p></section>
+<p class="qr"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://seyyah.me/p/rails-sessions&chf=bg,s,00000000&choe=UTF-8" alt="QR Code" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1618,7 +1618,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/6
+              1/7
             </aside>
           </footer>
         </div>
@@ -1626,35 +1626,25 @@ div.slide {
       
       <!-- slide source: ./index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>Tags</h1></header>
+            <header><h1>Introduction</h1></header>
             
             
-            <section><p>Yeni bir tag oluştururken,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git tag -a v1.4 -m <span class="s2">&quot;version 1.4&quot;</span>
-<span class="nv">$ </span>git log
-67278c7f5f3a3b009a1474ca201f2b52f7728262 bla bla
-<span class="nv">$ </span>git tag -a v1.0-ustad -m <span class="s2">&quot;version 1.4&quot;</span> 67278c7f5f3a3b009a1474ca201f2b52f7728262
-</pre></div>
-
-<p>Tag leri listelerken,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git tag
-<span class="nv">$ </span>git tag -l v1.*
-v1.1
-v1.2
-</pre></div>
-
-<p>Tag i göstermek,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git show v1.4
-</pre></div>
-
-<p>Tag leri paylaşmak,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git push --tags
-</pre></div>
-
-<p>Kaynak: <a href="http://learn.github.com/p/tagging.html">http://learn.github.com/p/tagging.html</a></p></section>
+            <section><ul>
+<li>
+<p>HTTP stateless protokoldür</p>
+</li>
+<li>
+<p>İstemci/tarayıcı ile sunucu arasında ki oturum ID'leri nasıl tutulacak?</p>
+</li>
+<li>
+<p>URL'ye göm</p>
+</li>
+<li>Form'a göm</li>
+<li>cookies kullan</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1670,7 +1660,7 @@ v1.2
             </aside>
             
             <aside class="page_number">
-              2/6
+              2/7
             </aside>
           </footer>
         </div>
@@ -1678,22 +1668,11 @@ v1.2
       
       <!-- slide source: ./index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>Checkout</h1></header>
+            <header><h1>Sessions</h1></header>
             
-            
-            <section><p>Dal ismi olmaksızın,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git log
-67278c7f5f3a3b009a1474ca201f2b52f7728262 bla bla
-<span class="nv">$ </span>git checkout 67278c7f5f3a3b009a1474ca201f2b52f7728262
-<span class="nv">$ </span>git branch
-<span class="nv">$ </span>git checkout -b v1.0-ustad
-<span class="nv">$ </span>git branch
-</pre></div>
-
-<p>Kaynak: <a href="http://gitimmersion.com/lab_12.html">GETTING OLD VERSIONS</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1709,7 +1688,7 @@ v1.2
             </aside>
             
             <aside class="page_number">
-              3/6
+              3/7
             </aside>
           </footer>
         </div>
@@ -1717,17 +1696,27 @@ v1.2
       
       <!-- slide source: ./index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>Github</h1></header>
+            <header><h1>Sessions in Rails</h1></header>
             
             
-            <section><p>Commit mesajıyla issues'u kapatmak: 123 issues'u kapat,</p>
-<div class="highlight"><pre><span class="c"># commit mesajında</span>
-foo bar. Close <span class="c">#123</span>
-</pre></div>
-</section>
+            <section><ul>
+<li>
+<p>Session, hash benzeri yapıda tutulur</p>
+</li>
+<li>
+<p>request'ler arasında veri aktarımını mümkün kılar</p>
+</li>
+<li>
+<p>session_id: 32 hex karakter, MD5, rastgele, sabit. İstemci/tarayıcıda
+  saklanır.</p>
+</li>
+<li>
+<p>session storage'da saklanır.</p>
+</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1743,7 +1732,7 @@ foo bar. Close <span class="c">#123</span>
             </aside>
             
             <aside class="page_number">
-              4/6
+              4/7
             </aside>
           </footer>
         </div>
@@ -1751,24 +1740,38 @@ foo bar. Close <span class="c">#123</span>
       
       <!-- slide source: ./index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>Branch Rename</h1></header>
+            <header><h1>Session Data</h1></header>
             
             
-            <section><p>Senaryo: <code>old</code> dalını <code>new</code> olarak yerelde ve uzakta isimlendirmek.</p>
-<p>Komutlar, yerel için,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git branch -m old new
-</pre></div>
-
-<p>uzağı da çözelim,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git push origin :old
-<span class="nv">$ </span>git push origin new:ref/heads/new
-</pre></div>
-
-<p><strong>Not</strong>: silinecek uzak dal, github'da <em>default branch</em> olmamalı!</p>
-<p>Kaynaklar: <a href="http://www.dmo.ca/blog/20080307124544/">http://www.dmo.ca/blog/20080307124544/</a></p></section>
+            <section><ul>
+<li>
+<p>farklı tarayıcı istekleri arasında saklanan <strong>bilgi</strong>, <code>Session Data</code></p>
+</li>
+<li>
+<p>Her bir ziyaret için session data, ya sunucuda ya da cooki'lerde saklanır</p>
+</li>
+<li>
+<p>İstemci/tarayıcı sunucudan istekte bulunduğunda,</p>
+<ul>
+<li>
+<p>session data session storage'den (ör. <code>reddis</code>)</p>
+</li>
+<li>
+<p>istemcinin tarayıcısının gönderdiği</p>
+</li>
+<li>
+<p>session ID kullanılarak çıkarılır</p>
+</li>
+</ul>
+</li>
+<li>
+<p>session data'ya en iyi örnek: "authentication" (yetkilendirme) için kullanıcı
+  bilgisidir.</p>
+</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1784,7 +1787,7 @@ foo bar. Close <span class="c">#123</span>
             </aside>
             
             <aside class="page_number">
-              5/6
+              5/7
             </aside>
           </footer>
         </div>
@@ -1792,16 +1795,40 @@ foo bar. Close <span class="c">#123</span>
       
       <!-- slide source: ./index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>Etc</h1></header>
+            <header><h1>Örnek</h1></header>
             
             
-            <section><p>Kısa kısa,</p>
-<div class="highlight"><pre><span class="nv">$ </span>git diff --cached
-</pre></div>
-</section>
+            <section><p>Dikkatli incelenmesi gereken bir kod,</p>
+<pre><code>  !ruby
+  def index
+     cookies[:key] = "val"
+     puts cookies[:key]
+     redirect_to :second_index
+  end
+
+  def second_index
+     cookies[:key] = "newval"
+     puts cookies[:key]
+  end
+</code></pre>
+<p>Output,</p>
+<pre><code>  !ruby
+  ## Open index page for the first time
+  # nil
+  # val
+
+  ## Open index page the second time
+  # newval
+  # val
+</code></pre>
+<p>Neden?</p>
+<blockquote>
+<p>cookies[] gives you value from the <strong>incoming</strong> cookie.
+cookies[]= sets value in the <strong>outgoing</strong> cookie.</p>
+</blockquote></section>
             
           </div>
           <div class="presenter_notes">
@@ -1817,7 +1844,43 @@ foo bar. Close <span class="c">#123</span>
             </aside>
             
             <aside class="page_number">
-              6/6
+              6/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Kaynaklar</h1></header>
+            
+            
+            <section><ol>
+<li><a href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails">Sessions and cookies in Ruby on
+   Rails</a></li>
+</ol>
+<h2>Okunası Kaynaklar</h2>
+<p>1.
+<a href="http://stackoverflow.com/questions/377137/rails-multiple-top-level-domains-and-a-single-session-cookie">http://stackoverflow.com/questions/377137/rails-multiple-top-level-domains-and-a-single-session-cookie</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/7
             </aside>
           </footer>
         </div>
@@ -1832,38 +1895,44 @@ foo bar. Close <span class="c">#123</span>
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Git: İpucu</a></th>
+        <th><a href="#slide1">Rails: Sessions &amp; Cookies</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Tags</a></th>
+        <th><a href="#slide2">Introduction</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">Checkout</a></th>
+        <th><a href="#slide3">Sessions</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Github</a></th>
+        <th><a href="#slide4">Sessions in Rails</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Branch Rename</a></th>
+        <th><a href="#slide5">Session Data</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">Etc</a></th>
+        <th><a href="#slide6">Örnek</a></th>
         <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Kaynaklar</a></th>
+        <td><a href="#slide7">7</a></td>
       </tr>
       
       
