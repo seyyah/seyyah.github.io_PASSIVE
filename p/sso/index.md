@@ -16,6 +16,12 @@ TODO
 
 # Kaynaklar
 
+- [Twitter, Facebook
+  vs Ayar](https://github.com/diaspora/diaspora/wiki/Howto-setup-services)
+
+> resimlerle anlatım
+
+- https://github.com/hulihanapplications/authbuttons-rails
 - [Multiple Applications with Devise, Omniauth and Single Sign On](http://blog.joshsoftware.com/2010/12/16/multiple-applications-with-devise-omniauth-and-single-sign-on/)
 
 - http://andrewrdavis.net/2012/01/28/rails-devise-omniauth-heroku-facebook-twitter-and-google/
