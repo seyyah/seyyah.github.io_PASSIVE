@@ -59,3 +59,44 @@ Dal ismi olmaksızın,
 	$ git branch
 
 Kaynak: [GETTING OLD VERSIONS](http://gitimmersion.com/lab_12.html)
+
+---
+
+# Github
+
+Commit mesajıyla issues'u kapatmak: 123 issues'u kapat,
+
+	!bash
+	# commit mesajında
+	foo bar. Close #123
+
+---
+
+# Branch Rename
+
+Senaryo: `old` dalını `new` olarak yerelde ve uzakta isimlendirmek.
+
+Komutlar, yerel için,
+
+	!bash
+	$ git branch -m old new
+
+uzağı da çözelim,
+
+	!bash
+	$ git push origin :old
+	$ git push origin new:ref/heads/new
+
+**Not**: silinecek uzak dal, github'da _default branch_ olmamalı!
+
+Kaynaklar: <http://www.dmo.ca/blog/20080307124544/>
+
+---
+
+# Etc
+
+Kısa kısa,
+
+	!bash
+	$ git diff --cached
+

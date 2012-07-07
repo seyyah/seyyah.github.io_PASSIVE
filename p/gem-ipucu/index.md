@@ -14,17 +14,22 @@ Samsun
 
 ---
 
-# Sqlite3
+# Bağımlılık
 
 `sqlite3` kurulumu öncesinde,
 
     !bash
-    $ apt-get install libsqlite3-dev
+    $ sudo apt-get install libsqlite3-dev
 
 `pg` için,
 
     !bash
-    $ apt-get install libpq-dev
+    $ sudo apt-get install libpq-dev
+
+`ckeditor` için,
+
+    !bash
+    $ sudo apt-get install imagemagick
 
 ---
 
@@ -37,5 +42,6 @@ Samsun
   end
 
   group :production do
-    gem 'pg', '0.12.2'
+    gem 'pg'
+    gem 'activerecord-postgresql-adapter'
   end

@@ -14,6 +14,19 @@ Samsun
 
 ---
 
+# Reusable step definitions + i18n
+
+* http://github.com/nando/mundo-pepino
+* http://github.com/dancroak/blitz
+* http://github.com/demetriusnunes/swinger
+* http://github.com/richdownie/watircuke
+* http://github.com/napcs/cucumber_watir
+* http://github.com/mdoel/cukesteps
+* http://github.com/danielwanja/cucumberwithflex
+* http://github.com/fmiopensource/couchdb-cucumber
+
+---
+
 # Tags
 
 Bazı komut örnekleri,
@@ -83,3 +96,11 @@ Cucumber:Wiki [Tags](https://github.com/cucumber/cucumber/wiki/Tags)
 - [Tutorials and Related Blog
   Posts](https://github.com/cucumber/cucumber/wiki/tutorials-and-related-blog-posts)
 - [15 Expert Tips for Using Cucumber](http://www.engineyard.com/blog/2009/15-expert-tips-for-using-cucumber/)
+
+## Diğer
+
+- http://railscasts.com/episodes/275-how-i-test?view=asciicast
+- http://www.pmamediagroup.com/2009/04/what-netbeans-651-can-now-recognize-my-cucumber-feature-files/
+- http://www.pmamediagroup.com/2009/04/tutorial-how-to-install-setup-cucumber/
+- http://robots.thoughtbot.com/post/284805810/gimme-three-steps
+- http://collectiveidea.com/blog/archives/2010/09/09/practical-cucumber-factory-girl-steps/
