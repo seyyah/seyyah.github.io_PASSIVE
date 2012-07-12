@@ -1618,7 +1618,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/12
+              1/17
             </aside>
           </footer>
         </div>
@@ -1652,7 +1652,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              2/12
+              2/17
             </aside>
           </footer>
         </div>
@@ -1685,7 +1685,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              3/12
+              3/17
             </aside>
           </footer>
         </div>
@@ -1718,7 +1718,225 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              4/12
+              4/17
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Guide</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/17
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Eager Loading</h1></header>
+            
+            
+            <section><p>Eager loading, bağlantılı modellerde daha az veritabanı sorgusunu sağlar. Şöyle
+bir modelimiz olsun,</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">belongs_to</span> <span class="ss">:author</span>
+  <span class="n">has_many</span>   <span class="ss">:comments</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>şöyle bir sorgu çekildiğinde,</p>
+<div class="highlight"><pre><span class="no">Post</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Post:            &quot;</span> <span class="o">+</span> <span class="n">post</span><span class="o">.</span><span class="n">title</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Written by:      &quot;</span> <span class="o">+</span> <span class="n">post</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">name</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Last comment on: &quot;</span> <span class="o">+</span> <span class="n">post</span><span class="o">.</span><span class="n">comments</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">created_on</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>ve 100 adet Post varsa <code>title</code> için <code>1</code>, <code>author.name</code> için <code>100</code> ve
+<code>comments.*</code> için <code>100</code> sorgu çekilmek zorunda kalır. Dolayısıyla toplamda <code>201</code>
+sorgu yapar.</p>
+<p><code>belongs_to</code> ilişkisini dikkate alması söylersek,</p>
+<div class="highlight"><pre><span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:author</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+</pre></div>
+
+<p>Post'lar yüklendikten sonra, herbirinden <code>author_id</code>'leri toplar ve bir sorguda
+tüm author referanslarını yükler. Dolayısıyla sorgu sayısı <code>201</code> den <code>102</code>'e
+düşer.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/17
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Eager Loading: derinlemesine</h1></header>
+            
+            
+            <section><p>Comment'leri de benzer biçimde yükletirsek,</p>
+<div class="highlight"><pre><span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:author</span><span class="p">,</span> <span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+</pre></div>
+
+<p>Tek sorguyla comment'ler de yüklenince <code>201</code>'den <code>3</code>'e inmiş oluruz.</p>
+<p>Daha derinlere gitmek istersen comment'in author'u ve hatta gravatar'larını da
+yükleyeceğim dersek,</p>
+<div class="highlight"><pre><span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:author</span><span class="p">,</span> <span class="p">{</span><span class="n">comments</span><span class="p">:</span> <span class="p">{</span><span class="n">author</span><span class="p">:</span> <span class="ss">:gravatar</span><span class="p">}})</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/17
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Eager Loading: conditions</h1></header>
+            
+            
+            <section><p>Gereksiz kayıtların getirildiği şöylesi bir sorguyu,</p>
+<div class="highlight"><pre><span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="o">[</span><span class="ss">:author</span><span class="p">,</span> <span class="ss">:comments</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+  <span class="o">[</span><span class="s1">&#39;comments.approved = ?&#39;</span><span class="p">,</span> <span class="kp">true</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">all</span>
+</pre></div>
+
+<p>comment'lerden approved edilmemişlerin include işleminde yüklenmesine gerek yok!
+Bunu şöyle sağlarız,</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">has_many</span> <span class="ss">:approved_comments</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="s1">&#39;Comment&#39;</span><span class="p">,</span>
+           <span class="n">conditions</span><span class="p">:</span> <span class="o">[</span><span class="s1">&#39;approved = ?&#39;</span><span class="p">,</span> <span class="kp">true</span><span class="o">]</span>
+<span class="k">end</span>
+
+<span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:approved_comments</span><span class="p">)</span>
+</pre></div>
+
+<p>limit seçeneği de belirtilebilir,</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Picture</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">has_many</span> <span class="ss">:most_recent_comments</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="s1">&#39;Comment&#39;</span><span class="p">,</span>
+           <span class="n">order</span><span class="p">:</span> <span class="s1">&#39;id DESC&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="mi">10</span>
+<span class="k">end</span>
+
+<span class="no">Picture</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:most_recent_comments</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">most_recent_comments</span>
+<span class="c1"># =&gt; returns all associated comments.</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/17
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Eager Loading: polymorphic</h1></header>
+            
+            
+            <section><p>polymorphic bağlarda da kullanılabilir,</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Address</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">belongs_to</span> <span class="ss">:addressable</span><span class="p">,</span> <span class="ss">:polymorphic</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="k">end</span>
+
+<span class="no">Address</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:addressable</span><span class="p">)</span>
+</pre></div>
+
+<p>Kaynak</p>
+<ul>
+<li><a href="http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html">http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html</a></li>
+<li><a href="http://guides.rubyonrails.org/association_basics.html">http://guides.rubyonrails.org/association_basics.html</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/17
             </aside>
           </footer>
         </div>
@@ -1762,7 +1980,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              5/12
+              10/17
             </aside>
           </footer>
         </div>
@@ -1804,7 +2022,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              6/12
+              11/17
             </aside>
           </footer>
         </div>
@@ -1841,7 +2059,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              7/12
+              12/17
             </aside>
           </footer>
         </div>
@@ -1875,7 +2093,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              8/12
+              13/17
             </aside>
           </footer>
         </div>
@@ -1903,7 +2121,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              9/12
+              14/17
             </aside>
           </footer>
         </div>
@@ -1937,7 +2155,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              10/12
+              15/17
             </aside>
           </footer>
         </div>
@@ -1970,7 +2188,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              11/12
+              16/17
             </aside>
           </footer>
         </div>
@@ -2003,7 +2221,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              12/12
+              17/17
             </aside>
           </footer>
         </div>
@@ -2042,50 +2260,80 @@ div.slide {
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Exception: ActiveRecord</a></th>
+        <th><a href="#slide5">Guide</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">Rake</a></th>
+        <th><a href="#slide6">Eager Loading</a></th>
         <td><a href="#slide6">6</a></td>
       </tr>
       
       
       <tr id="toc-row-7">
-        <th><a href="#slide7">Console</a></th>
+        <th><a href="#slide7">Eager Loading: derinlemesine</a></th>
         <td><a href="#slide7">7</a></td>
       </tr>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Logger</a></th>
+        <th><a href="#slide8">Eager Loading: conditions</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">Sunucu</a></th>
+        <th><a href="#slide9">Eager Loading: polymorphic</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Heroku</a></th>
+        <th><a href="#slide10">Exception: ActiveRecord</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Unicorn</a></th>
+        <th><a href="#slide11">Rake</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Benchamark</a></th>
+        <th><a href="#slide12">Console</a></th>
         <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Logger</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Sunucu</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Heroku</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Unicorn</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Benchamark</a></th>
+        <td><a href="#slide17">17</a></td>
       </tr>
       
       

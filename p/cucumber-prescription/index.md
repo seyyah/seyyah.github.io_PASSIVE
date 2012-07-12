@@ -181,13 +181,68 @@ Genel olarak,
 
 ---
 
-# TODO
+# Feature
 
-Gist olarak örnekler
+---
+
+# Feature: User
+
+<script src="https://gist.github.com/3076224.js"> </script>
+
+---
+
+# Feature: Profile
+
+<script src="https://gist.github.com/3074775.js"> </script>
+
+---
+
+# Feature: Sign in
+
+<script src="https://gist.github.com/3074785.js"> </script>
+
+---
+
+# Feature: Sign up
+
+<script src="https://gist.github.com/3074787.js"> </script>
+
+---
+
+# Feature: Forms Steps
+
+<script src="https://gist.github.com/3074853.js"> </script>
+
+---
+
+# Support
+
+---
+
+# Support: Login Steps
+
+<script src="https://gist.github.com/3074811.js"> </script>
+
+---
+
+# Support: Within Helpers
+
+<script src="https://gist.github.com/3074818.js"> </script>
+
+---
+
+# Support: Navigation Helpers
+
+<script src="https://gist.github.com/3074830.js"> </script>
 
 ---
 
 # Reusable step definitions + i18n
+
+- <https://github.com/kucaahbe/cucumber-websteps>
+- <https://github.com/ryanb/railscasts-episodes/blob/master/episode-159/blog/features/step_definitions/webrat_steps.rb>
+
+## Diğer
 
 - <http://github.com/nando/mundo-pepino>
 - <http://github.com/dancroak/blitz>

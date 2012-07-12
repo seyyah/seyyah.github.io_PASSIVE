@@ -42,6 +42,111 @@ Evet sadece view üretmek istersek,
 
 ---
 
+# Guide
+---
+
+# Eager Loading
+
+Eager loading, bağlantılı modellerde daha az veritabanı sorgusunu sağlar. Şöyle
+bir modelimiz olsun,
+
+    !ruby
+    class Post < ActiveRecord::Base
+      belongs_to :author
+      has_many   :comments
+    end
+
+şöyle bir sorgu çekildiğinde,
+
+    !ruby
+    Post.all.each do |post|
+      puts "Post:            " + post.title
+      puts "Written by:      " + post.author.name
+      puts "Last comment on: " + post.comments.first.created_on
+    end
+
+ve 100 adet Post varsa `title` için `1`, `author.name` için `100` ve
+`comments.*` için `100` sorgu çekilmek zorunda kalır. Dolayısıyla toplamda `201`
+sorgu yapar.
+
+`belongs_to` ilişkisini dikkate alması söylersek,
+
+    !ruby
+    Post.includes(:author).each do |post|
+
+Post'lar yüklendikten sonra, herbirinden `author_id`'leri toplar ve bir sorguda
+tüm author referanslarını yükler. Dolayısıyla sorgu sayısı `201` den `102`'e
+düşer.
+
+---
+
+# Eager Loading: derinlemesine
+
+Comment'leri de benzer biçimde yükletirsek,
+
+    !ruby
+    Post.includes(:author, :comments).each do |post|
+
+Tek sorguyla comment'ler de yüklenince `201`'den `3`'e inmiş oluruz.
+
+Daha derinlere gitmek istersen comment'in author'u ve hatta gravatar'larını da
+yükleyeceğim dersek,
+
+    !ruby
+    Post.includes(:author, {comments: {author: :gravatar}}).each do |post|
+
+---
+
+# Eager Loading: conditions
+
+Gereksiz kayıtların getirildiği şöylesi bir sorguyu,
+
+    !ruby
+    Post.includes([:author, :comments]).where(
+      ['comments.approved = ?', true]).all
+
+comment'lerden approved edilmemişlerin include işleminde yüklenmesine gerek yok!
+Bunu şöyle sağlarız,
+
+    !ruby
+    class Post < ActiveRecord::Base
+      has_many :approved_comments, class_name: 'Comment',
+               conditions: ['approved = ?', true]
+    end
+
+    Post.includes(:approved_comments)
+
+limit seçeneği de belirtilebilir,
+
+    !ruby
+    class Picture < ActiveRecord::Base
+      has_many :most_recent_comments, class_name: 'Comment',
+               order: 'id DESC', limit: 10
+    end
+
+    Picture.includes(:most_recent_comments).first.most_recent_comments
+    # => returns all associated comments.
+
+---
+
+# Eager Loading: polymorphic
+
+polymorphic bağlarda da kullanılabilir,
+
+    !ruby
+    class Address < ActiveRecord::Base
+      belongs_to :addressable, :polymorphic => true
+    end
+
+    Address.includes(:addressable)
+
+Kaynak
+
+- <http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html>
+- <http://guides.rubyonrails.org/association_basics.html>
+
+---
+
 # Exception: ActiveRecord
 ## ::MultiparameterAssignmentErrors
 
