@@ -42,6 +42,16 @@ Evet sadece view üretmek istersek,
 
 ---
 
+# Model
+---
+
+# HABTM + establish_connection
+
+Kaynak:
+<http://stackoverflow.com/questions/184600/has-and-belongs-to-many-relationship-with-multiple-databases>
+
+---
+
 # Guide
 ---
 
