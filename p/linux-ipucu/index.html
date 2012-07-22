@@ -1618,7 +1618,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/6
+              1/7
             </aside>
           </footer>
         </div>
@@ -1663,7 +1663,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              2/6
+              2/7
             </aside>
           </footer>
         </div>
@@ -1696,7 +1696,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              3/6
+              3/7
             </aside>
           </footer>
         </div>
@@ -1736,7 +1736,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              4/6
+              4/7
             </aside>
           </footer>
         </div>
@@ -1792,7 +1792,7 @@ Host kisa_ad
             </aside>
             
             <aside class="page_number">
-              5/6
+              5/7
             </aside>
           </footer>
         </div>
@@ -1826,7 +1826,52 @@ Host kisa_ad
             </aside>
             
             <aside class="page_number">
-              6/6
+              6/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>VirtualBox - Ubuntu</h1></header>
+            
+            
+            <section><p><a href="http://www.liberiangeek.net/2012/05/install-virtualbox-4-1-14-in-ubuntu-12-04-precise-pangolin/">Install VirtualBox 4.1.14 in Ubuntu 12.04 (Precise
+Pangolin)</a>
+kodlar,</p>
+<div class="highlight"><pre><span class="nv">$ </span>wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O-
+| sudo apt-key add -
+<span class="nv">$ </span>sudo sh -c <span class="s1">&#39;echo &quot;deb http://download.virtualbox.org/virtualbox/debian</span>
+<span class="s1">precise contrib&quot; &gt;&gt; /etc/apt/sources.list&#39;</span>
+<span class="nv">$ </span>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install virtualbox-4.1
+</pre></div>
+
+<p>USB problemini çözmek için <a href="http://seoroot.com/blog/ubuntu-linux/virtualbox-4-failed-to-access-the-usb-subsystem.html/">VirtualBox 4: Failed to access the USB
+subsystem</a>,</p>
+<div class="highlight"><pre><span class="nv">$ </span>sudo usermod -a -G vboxusers username
+<span class="c"># logout - login</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/7
             </aside>
           </footer>
         </div>
@@ -1873,6 +1918,12 @@ Host kisa_ad
       <tr id="toc-row-6">
         <th><a href="#slide6">Bash</a></th>
         <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">VirtualBox - Ubuntu</a></th>
+        <td><a href="#slide7">7</a></td>
       </tr>
       
       

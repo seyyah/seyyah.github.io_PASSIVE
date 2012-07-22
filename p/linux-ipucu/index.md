@@ -102,3 +102,26 @@ Find,
     !bash
     $ find . -type f -perm 0755 |
       xargs /bin/chmod 0644
+
+---
+
+# VirtualBox - Ubuntu
+
+[Install VirtualBox 4.1.14 in Ubuntu 12.04 (Precise
+Pangolin)](http://www.liberiangeek.net/2012/05/install-virtualbox-4-1-14-in-ubuntu-12-04-precise-pangolin/)
+kodlar,
+
+    !bash
+    $ wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O-
+    | sudo apt-key add -
+    $ sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian
+    precise contrib" >> /etc/apt/sources.list'
+    $ sudo apt-get update && sudo apt-get install virtualbox-4.1
+
+USB problemini çözmek için [VirtualBox 4: Failed to access the USB
+subsystem](http://seoroot.com/blog/ubuntu-linux/virtualbox-4-failed-to-access-the-usb-subsystem.html/),
+
+    !bash
+    $ sudo usermod -a -G vboxusers username
+    # logout - login
+
