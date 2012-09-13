@@ -37,71 +37,43 @@ Samsun
 
 # Hello
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051964496608018680000df'
-	src='http://shelr.tv/records/5051dab29660801890000016/embed'
-></iframe>
+.shelr: 5051dab29660801890000016
 
 ---
 
 # Ruby Turu: OOP
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051964496608018680000df'
-	src='http://shelr.tv/records/5051db1e9660801890000017/embed'
-></iframe>
+.shelr: 5051db1e9660801890000017
 
 ---
 
 # Ruby Turu: Bloklar ve Iteratorler
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051dcb796608010b3000022/embed'
-></iframe>
+.shelr: 5051dcb796608010b3000022
 
 ---
 
 # Ruby Turu: İfadeler ve İşleçler
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051de1e96608010b3000025/embed'
-></iframe>
+.shelr: 5051de1e96608010b3000025
 
 ---
 
 # Ruby Turu: Yöntemler
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051de9c966080189000001e/embed'
-></iframe>
+.shelr: 5051de9c966080189000001e
 
 ---
 
 # Ruby Turu: Atama
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051dfac96608010b3000026/embed'
-></iframe>
+.shelr: 5051dfac96608010b3000026
 
 ---
 
 # Ruby Turu: Punctuation
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051e094966080189000001f/embed'
-></iframe>
+.shelr: 5051e094966080189000001f
 
 - fonksiyon tanımında `!` ve `?` sıklıkla kullanılır
 
@@ -111,32 +83,19 @@ Samsun
 
 # Ruby Turu: Regexp ve Range
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051e3039660801890000020/embed'
-></iframe>
-
+.shelr: 5051e3039660801890000020
 
 ---
 
 # Ruby Turu: Class ve Modüller
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051e41b96608010b3000029/embed'
-></iframe>
+.shelr: 5051e41b96608010b3000029
 
 ---
 
 # IRB
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051e6ef96608010b300002c/embed'
-></iframe>
+.shelr: 5051e6ef96608010b300002c
 
 - nokta-`.`: class/modül ile yöntemi ayırır
 
@@ -268,11 +227,7 @@ bunları kullanmayın.
 
 # Beyaz Boşluklar
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051f02096608010b3000031/embed'
-></iframe>
+.shelr: 5051f02096608010b3000031
 
 ---
 
@@ -360,11 +315,7 @@ Koşul ve döngü **ifade**leri (statement) ile birleştirilebilir
 
 # Karakter Kodlama
 
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records/5051f6139660801890000023/embed'
-></iframe>
+.shelr: 5051f6139660801890000023
 
 - diyez ile başlayan satırlar _shebang comment_ olarak bilinir
 
@@ -374,12 +325,3 @@ Koşul ve döngü **ifade**leri (statement) ile birleştirilebilir
 
 <img src="http://i.imgur.com/Wlnp3.png" height="500">
 
----
-
-# Template
-
-<iframe border='0' scrolling='no' style='border: 0'
-	width='570' height='418'
-	id='shelr_record_5051db1e9660801890000017'
-	src='http://shelr.tv/records//embed'
-></iframe>
