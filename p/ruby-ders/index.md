@@ -372,6 +372,8 @@ Koşul ve döngü **ifade**leri (statement) ile birleştirilebilir
 
 # Bölüm 3: Veri Türleri ve Nesneler
 
+<img src="http://i.imgur.com/Wlnp3.png" height="500">
+
 ---
 
 # Template
