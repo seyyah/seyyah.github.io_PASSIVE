@@ -4,7 +4,7 @@
 
 Nurettin Şenyer <seyyah@bil.omu.edu.tr>
 
-http://seyyah.me
+<http://seyyah.me/p>
 
 Haziran, 2012
 
