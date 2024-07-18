@@ -3,7 +3,7 @@ markdown: rdiscount
 rdiscount:
   extensions: [smart]
 pygments: true
-url: http://seyyah.me
+url: https://seyyah.github.io/
 exclude:
         - Rakefile
         - Makefile
